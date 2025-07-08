@@ -11,7 +11,7 @@ import SwiftUI
 struct WaterBoostApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainTabbedView()
         }
     }
 }

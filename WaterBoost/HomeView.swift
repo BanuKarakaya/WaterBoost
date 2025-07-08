@@ -10,6 +10,9 @@ import SwiftUI
 struct HomeView: View {
     
     let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
+    let shadowBlue = Color(red: 7/255, green: 100/255, blue: 155/255)
+    let peachColor = Color(red: 7/255, green: 70/255, blue: 107/255)
+    let lightBlue = Color(red: 183 / 255, green: 222 / 255, blue: 250 / 255)
     let motionManager = MotionManager()
     
     var body: some View {
@@ -22,7 +25,7 @@ struct HomeView: View {
                 Text("Tuesday, Jun 1")
                     .font(.title2)
                     .fontWeight(.medium)
-                    .foregroundColor(Color(red: 128/255, green: 128/255, blue: 128/255))
+                    .foregroundColor(.white)
                     .padding(.top, 20)
                 
                 // Üst Bilgiler (1100 ml - Divider - 2250 ml)
@@ -55,6 +58,43 @@ struct HomeView: View {
                 GravityAnimation().environmentObject(motionManager)
                 
                 Spacer() // Alt tarafta boşluk bırak
+                
+                HStack(spacing: 15) {
+                    Button(action: {}) {
+                           Text("200 ml")
+                             .foregroundColor(lightBlue)
+                             .padding()
+                             .background(
+                               RoundedRectangle(cornerRadius: 10)
+                                 .stroke(lightBlue, lineWidth: 1)
+                             )
+                         }
+                    .shadow(color: .white, radius: 15, y: 1)
+                    
+                    Button(action: {}) {
+                           Text("300 ml")
+                             .foregroundColor(lightBlue)
+                             .padding()
+                             .background(
+                               RoundedRectangle(cornerRadius: 10)
+                                 .stroke(lightBlue, lineWidth: 1)
+                             )
+                         }
+                    .shadow(color: .white, radius: 15, y: 1)
+                    
+                    Button(action: {}) {
+                           Text("500 ml")
+                             .foregroundColor(lightBlue)
+                             .padding()
+                             .background(
+                               RoundedRectangle(cornerRadius: 10)
+                                 .stroke(lightBlue, lineWidth: 1)
+                             )
+                         }
+                    .shadow(color: .white, radius: 15, y: 1)
+                }
+                
+                .padding(.bottom, 60)
             }
             .padding(.horizontal, 30) // Kenarlardan içeri al
         }
