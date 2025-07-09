@@ -49,87 +49,142 @@ struct IstatisticView: View {
         ZStack {
             darkBlue.ignoresSafeArea()
             
-            VStack(spacing: 24) {
-                
-                Text("Merhaba Banu,")
-                    .font(.title2)
-                    .fontWeight(.bold)
-                    .foregroundColor(.white)
-                    .padding(.top, 16)
-                    .padding(.horizontal, 25)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                VStack(alignment: .leading, spacing: 15) {
-                    HStack() {
-                        Image(systemName: "waterbottle")
-                            .fontWeight(.regular)
-                            .foregroundColor(.orange)
-                            .padding(.top, 70)
-                            .padding(.leading, 10)
-                        
-                        Text("Daily Water Consumption")
-                            .font(.headline)
-                            .fontWeight(.regular)
-                            .foregroundColor(.orange)
-                            .padding(.top, 70)
-                            .padding(.leading, 0)
-                    }
+            ScrollView {
+                VStack(spacing: 24) {
                     
-                    Chart {
-                        // Çizgi
-                        ForEach(waterData) { data in
-                            LineMark(
-                                x: .value("Saat", data.hour),
-                                y: .value("Su (ml)", data.waterAmount)
-                            )
-                            .interpolationMethod(.cardinal)
-                            .foregroundStyle(chartColor)
-                            .symbol(by: .value("Tür", "Su"))
+                    Text("Merhaba Banu,")
+                        .font(.title2)
+                        .fontWeight(.bold)
+                        .foregroundColor(.white)
+                        .padding(.top, 16)
+                        .padding(.horizontal, 25)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    VStack(alignment: .leading, spacing: 15) {
+                        HStack() {
+                            Image(systemName: "waterbottle")
+                                .fontWeight(.regular)
+                                .foregroundColor(.orange)
+                                .padding(.top, 70)
+                                .padding(.leading, 10)
+                            
+                            Text("Daily Water Consumption")
+                                .font(.headline)
+                                .fontWeight(.regular)
+                                .foregroundColor(.orange)
+                                .padding(.top, 70)
+                                .padding(.leading, 0)
                         }
                         
-                        // Alan (buğulu)
-                        ForEach(waterData) { data in
-                            AreaMark(
-                                x: .value("Saat", data.hour),
-                                y: .value("Su (ml)", data.waterAmount)
-                            )
-                            .interpolationMethod(.cardinal)
-                            .foregroundStyle(linearGradient)
+                        Chart {
+                            // Çizgi
+                            ForEach(waterData) { data in
+                                LineMark(
+                                    x: .value("Saat", data.hour),
+                                    y: .value("Su (ml)", data.waterAmount)
+                                )
+                                .interpolationMethod(.cardinal)
+                                .foregroundStyle(chartColor)
+                                .symbol(by: .value("Tür", "Su"))
+                            }
+                            
+                            // Alan (buğulu)
+                            ForEach(waterData) { data in
+                                AreaMark(
+                                    x: .value("Saat", data.hour),
+                                    y: .value("Su (ml)", data.waterAmount)
+                                )
+                                .interpolationMethod(.cardinal)
+                                .foregroundStyle(linearGradient)
+                            }
                         }
-                    }
-                    .frame(width: 310, height: 170)
-                    .background(darkChartBlue)
-                    .chartXScale(domain: waterData.map(\.hour).min()!...waterData.map(\.hour).max()!)
-                    .chartLegend(.hidden)
-                    .chartYAxis {
-                        AxisMarks() { value in
-                            AxisGridLine()
-                                .foregroundStyle(Color.white.opacity(0.3))
-                            AxisTick()
-                                .foregroundStyle(Color.white.opacity(0.3))
-                            AxisValueLabel()
-                                .foregroundStyle(Color.white)
-                        }
-                    }
-                    .chartXAxis {
-                        AxisMarks(values: waterData.map(\.hour)) { value in
-                            AxisGridLine()
-                                .foregroundStyle(Color.white.opacity(0.3))
-                            AxisTick()
-                                .foregroundStyle(Color.white.opacity(0.3))
-                            if let hour = value.as(Int.self) {
-                                AxisValueLabel("\(hour):00")
+                        .frame(width: 310, height: 170)
+                        .background(darkChartBlue)
+                        .chartXScale(domain: waterData.map(\.hour).min()!...waterData.map(\.hour).max()!)
+                        .chartLegend(.hidden)
+                        .chartYAxis {
+                            AxisMarks() { value in
+                                AxisGridLine()
+                                    .foregroundStyle(Color.white.opacity(0.3))
+                                AxisTick()
+                                    .foregroundStyle(Color.white.opacity(0.3))
+                                AxisValueLabel()
                                     .foregroundStyle(Color.white)
                             }
                         }
+                        .chartXAxis {
+                            AxisMarks(values: waterData.map(\.hour)) { value in
+                                AxisGridLine()
+                                    .foregroundStyle(Color.white.opacity(0.3))
+                                AxisTick()
+                                    .foregroundStyle(Color.white.opacity(0.3))
+                                if let hour = value.as(Int.self) {
+                                    AxisValueLabel("\(hour):00")
+                                        .foregroundStyle(Color.white)
+                                }
+                            }
+                        }
+                        .aspectRatio(1.0, contentMode: .fit)
+                        .padding(.horizontal, 16) // genişlik açısından boşluk
+                        .padding(.bottom, 80)
                     }
-                    .aspectRatio(1.0, contentMode: .fit)
-                    .padding(.horizontal, 16) // genişlik açısından boşluk
-                    .padding(.bottom, 80)
+                    .frame(maxWidth: 340, maxHeight: 240)
+                    .background(darkChartBlue)
+                    .cornerRadius(12)
+                    
+                    VStack(alignment: .leading, spacing: 15) {
+                        HStack() {
+                            Image(systemName: "waterbottle")
+                                .fontWeight(.regular)
+                                .foregroundColor(.orange)
+                                .padding(.top, 15)
+                                .padding(.leading, 10)
+                            
+                            Text("Daily Water Consumption")
+                                .font(.headline)
+                                .fontWeight(.regular)
+                                .foregroundColor(.orange)
+                                .padding(.top, 15)
+                                .padding(.leading, 0)
+                        }
+                        
+                        Chart {
+                                    BarMark(x: .value("Day", "Monday"),
+                                            y: .value("Population", 1))
+                                    .foregroundStyle(.pink)
+
+                                    BarMark(x: .value("Day", "Tuesday"),
+                                            y: .value("Population", 2))
+                                    .foregroundStyle(.green)
+
+                                    BarMark(x: .value("Day", "Wednesday"),
+                                            y: .value("Population", 3))
+                                    .foregroundStyle(.blue)
+                            
+                                    BarMark(x: .value("Day", "Thursday"),
+                                            y: .value("Population", 4))
+                                    .foregroundStyle(.pink)
+
+                                    BarMark(x: .value("Day", "Friday"),
+                                            y: .value("Population", 5))
+                                    .foregroundStyle(.green)
+
+                                    BarMark(x: .value("Day", "Saturday"),
+                                            y: .value("Population", 6))
+                                    .foregroundStyle(.blue)
+                            
+                                    BarMark(x: .value("Day", "Sunday"),
+                                            y: .value("Population", 7))
+                                    .foregroundStyle(.blue)
+                                }
+                                .aspectRatio(1, contentMode: .fit)
+                                .frame(width: 310, height: 280)
+                                .padding()
+                    }
+                    .background(darkChartBlue)
+                    .cornerRadius(12)
+                    .frame(width: 330, height: 350)
                 }
-                .frame(maxWidth: 340, maxHeight: 240)
-                .background(darkChartBlue)
-                .cornerRadius(12)
             }
         }
     }
