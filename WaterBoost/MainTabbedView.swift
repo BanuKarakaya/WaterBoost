@@ -19,9 +19,10 @@ struct MainTabbedView: View {
             TabView(selection: $selectedTab) {
                 ContentView()
                     .tag(0)
-
-                ListView()
+                IstatisticView()
                     .tag(1)
+                ListView()
+                    .tag(2)
             }
             
             ZStack{

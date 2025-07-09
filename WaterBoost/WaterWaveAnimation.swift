@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WaterWaveAnimation: View {
     
-    @State private var percent = 20.0
+    var percent: Double
     @State private var waveOffset = Angle(degrees: 0)
     let lightBlue = Color(red: 134/255, green: 199/255, blue: 237/255)
     
@@ -18,9 +18,6 @@ struct WaterWaveAnimation: View {
             Wave(offSet: Angle(degrees: waveOffset.degrees), percent: percent)
                 .fill(lightBlue)
                 .ignoresSafeArea(.all)
-            
-            //slider
-            //text
         }
         .onAppear {
             withAnimation(.linear(duration: 1.5).repeatForever(autoreverses: false)) {
@@ -68,5 +65,5 @@ struct Wave: Shape {
 }
 
 #Preview {
-    WaterWaveAnimation()
+    WaterWaveAnimation(percent: 10.0)
 }

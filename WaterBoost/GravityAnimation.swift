@@ -43,11 +43,11 @@ class MotionManager: ObservableObject {
 
 struct GravityAnimation: View {
     @EnvironmentObject var motion: MotionManager
-    
+    var percent: Double
     
     var body: some View {
         ZStack {
-            StraightImageView()
+            StraightImageView(percent: percent)
         }
     }
 }
@@ -55,10 +55,11 @@ struct GravityAnimation: View {
 struct StraightImageView: View {
     @EnvironmentObject var motion: MotionManager
     let lightBlue = Color(red: 183 / 255, green: 222 / 255, blue: 250 / 255)
+    var percent: Double
     
     var body: some View {
         ZStack {
-            WaterWaveAnimation()
+            WaterWaveAnimation(percent: percent)
                 .frame(width: 250, height: 250) // Daire boyutu
                 .foregroundColor(Color(red: 183 / 255, green: 222 / 255, blue: 250 / 255))
                 .clipShape(Circle()) // Sınırlandır
@@ -72,6 +73,6 @@ struct StraightImageView: View {
 }
 
 #Preview {
-    GravityAnimation()
+    GravityAnimation(percent: 10)
         .environmentObject(MotionManager())
 }

@@ -14,6 +14,7 @@ struct HomeView: View {
     let peachColor = Color(red: 7/255, green: 70/255, blue: 107/255)
     let lightBlue = Color(red: 183 / 255, green: 222 / 255, blue: 250 / 255)
     let motionManager = MotionManager()
+    @State private var percent = 20.0
     
     var body: some View {
         ZStack {
@@ -55,12 +56,16 @@ struct HomeView: View {
                 .padding(.vertical, 20) // Yukarıdan ve aşağıdan boşluk bırak
                 
                 // Ana Görsel
-                GravityAnimation().environmentObject(motionManager)
+                GravityAnimation(percent: percent).environmentObject(motionManager)
                 
                 Spacer() // Alt tarafta boşluk bırak
                 
                 HStack(spacing: 15) {
-                    Button(action: {}) {
+                    Button(action: {
+                        withAnimation {
+                            percent = min(percent + 20, 100) // 100'ü geçmesin
+                        }
+                    }) {
                            Text("200 ml")
                              .foregroundColor(lightBlue)
                              .padding()
@@ -71,7 +76,11 @@ struct HomeView: View {
                          }
                     .shadow(color: .white, radius: 15, y: 1)
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        withAnimation {
+                            percent = min(percent + 20, 100) // 100'ü geçmesin
+                        }
+                    }) {
                            Text("300 ml")
                              .foregroundColor(lightBlue)
                              .padding()
@@ -82,7 +91,11 @@ struct HomeView: View {
                          }
                     .shadow(color: .white, radius: 15, y: 1)
                     
-                    Button(action: {}) {
+                    Button(action: {
+                        withAnimation {
+                            percent = min(percent + 20, 100) // 100'ü geçmesin
+                        }
+                    }) {
                            Text("500 ml")
                              .foregroundColor(lightBlue)
                              .padding()
