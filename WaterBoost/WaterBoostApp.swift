@@ -10,13 +10,25 @@ import SwiftUI
 @main
 struct WaterBoostApp: App {
     @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    @State private var isActive = false
     
     var body: some Scene {
         WindowGroup {
             if isOnboarding {
                OnboardingView()
             } else {
-               MainTabbedView()
+                if isActive {
+                   MainTabbedView()
+                } else {
+                   LaunchScreen()
+                        .onAppear {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 5) {
+                                withAnimation {
+                                    self.isActive = true
+                            }
+                        }
+                    }
+                }
             }
         }
     }

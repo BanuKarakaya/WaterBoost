@@ -3,20 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 56;
+	objectVersion = 70;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		FA2481A52E1AAD3B0085DC05 /* TabbedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2481A42E1AAD3B0085DC05 /* TabbedItems.swift */; };
 		FA2481A72E1AADE50085DC05 /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */; };
+		FA39A3672E299D7500059BEA /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3662E299D7500059BEA /* LaunchScreen.swift */; };
 		FA8C317D2E1DA557002BEAC7 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317C2E1DA557002BEAC7 /* ListRow.swift */; };
 		FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */; };
-		FAAF2A392E28EFDC00A89795 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A382E28EFDC00A89795 /* OnboardingView.swift */; };
-		FAAF2A3B2E28F3A000A89795 /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A3A2E28F3A000A89795 /* OnboardingModel.swift */; };
-		FAAF2A3D2E28F44000A89795 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A3C2E28F44000A89795 /* OnboardingData.swift */; };
-		FAAF2A3F2E28F55300A89795 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A3E2E28F55300A89795 /* OnboardingCardView.swift */; };
-		FAAF2A412E28F82100A89795 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A402E28F82100A89795 /* StartButtonView.swift */; };
-		FAAF2A432E294E6A00A89795 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A422E294E6A00A89795 /* UserNameView.swift */; };
 		FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */; };
 		FACA10802D9883E600CC26EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107F2D9883E600CC26EB /* ContentView.swift */; };
 		FACA10822D9883E800CC26EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACA10812D9883E800CC26EB /* Assets.xcassets */; };
@@ -50,14 +45,9 @@
 /* Begin PBXFileReference section */
 		FA2481A42E1AAD3B0085DC05 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
 		FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
+		FA39A3662E299D7500059BEA /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		FA8C317C2E1DA557002BEAC7 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 		FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstatisticView.swift; sourceTree = "<group>"; };
-		FAAF2A382E28EFDC00A89795 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
-		FAAF2A3A2E28F3A000A89795 /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
-		FAAF2A3C2E28F44000A89795 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
-		FAAF2A3E2E28F55300A89795 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
-		FAAF2A402E28F82100A89795 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
-		FAAF2A422E294E6A00A89795 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
 		FACA107A2D9883E600CC26EB /* WaterBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterBoostApp.swift; sourceTree = "<group>"; };
 		FACA107F2D9883E600CC26EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -73,6 +63,10 @@
 		FACA10AB2D9ECACB00CC26EB /* GravityAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityAnimation.swift; sourceTree = "<group>"; };
 		FACA10AD2DA1BCFA00CC26EB /* WaterWaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWaveAnimation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		FAAF2A442E295B0C00A89795 /* OnBoarding */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OnBoarding; sourceTree = "<group>"; };
+/* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		FACA10772D9883E600CC26EB /* Frameworks */ = {
@@ -122,7 +116,9 @@
 		FACA107C2D9883E600CC26EB /* WaterBoost */ = {
 			isa = PBXGroup;
 			children = (
+				FAAF2A442E295B0C00A89795 /* OnBoarding */,
 				FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */,
+				FA39A3662E299D7500059BEA /* LaunchScreen.swift */,
 				FACA107F2D9883E600CC26EB /* ContentView.swift */,
 				FACA10A72D98AE5E00CC26EB /* HomeView.swift */,
 				FACA10AB2D9ECACB00CC26EB /* GravityAnimation.swift */,
@@ -134,12 +130,6 @@
 				FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */,
 				FA8C317C2E1DA557002BEAC7 /* ListRow.swift */,
 				FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */,
-				FAAF2A382E28EFDC00A89795 /* OnboardingView.swift */,
-				FAAF2A3A2E28F3A000A89795 /* OnboardingModel.swift */,
-				FAAF2A3C2E28F44000A89795 /* OnboardingData.swift */,
-				FAAF2A3E2E28F55300A89795 /* OnboardingCardView.swift */,
-				FAAF2A402E28F82100A89795 /* StartButtonView.swift */,
-				FAAF2A422E294E6A00A89795 /* UserNameView.swift */,
 			);
 			path = WaterBoost;
 			sourceTree = "<group>";
@@ -183,6 +173,9 @@
 			buildRules = (
 			);
 			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FAAF2A442E295B0C00A89795 /* OnBoarding */,
 			);
 			name = WaterBoost;
 			productName = WaterBoost;
@@ -300,21 +293,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACA10AC2D9ECACB00CC26EB /* GravityAnimation.swift in Sources */,
-				FAAF2A3F2E28F55300A89795 /* OnboardingCardView.swift in Sources */,
-				FAAF2A3B2E28F3A000A89795 /* OnboardingModel.swift in Sources */,
-				FAAF2A412E28F82100A89795 /* StartButtonView.swift in Sources */,
+				FA39A3672E299D7500059BEA /* LaunchScreen.swift in Sources */,
 				FA2481A72E1AADE50085DC05 /* MainTabbedView.swift in Sources */,
 				FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */,
-				FAAF2A3D2E28F44000A89795 /* OnboardingData.swift in Sources */,
 				FACA10A82D98AE5E00CC26EB /* HomeView.swift in Sources */,
-				FAAF2A432E294E6A00A89795 /* UserNameView.swift in Sources */,
 				FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */,
 				FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */,
 				FACA10802D9883E600CC26EB /* ContentView.swift in Sources */,
 				FA2481A52E1AAD3B0085DC05 /* TabbedItems.swift in Sources */,
 				FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */,
 				FA8C317D2E1DA557002BEAC7 /* ListRow.swift in Sources */,
-				FAAF2A392E28EFDC00A89795 /* OnboardingView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
