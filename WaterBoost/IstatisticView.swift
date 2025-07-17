@@ -16,7 +16,7 @@ struct WaterData: Identifiable {
 
 extension WaterData {
     static let dailyExample: [WaterData] = [
-        .init(hour: 8, waterAmount: 150),
+        .init(hour: 8,  waterAmount: 150),
         .init(hour: 10, waterAmount: 200),
         .init(hour: 12, waterAmount: 100),
         .init(hour: 15, waterAmount: 250),
@@ -33,7 +33,10 @@ struct IstatisticView: View {
     
     let chartColor = Color.cyan
     let orangeColor = Color(red: 232/255, green: 149/255, blue: 52/255)
-    
+    let lightLimeGreen = Color(red: 193/255, green: 255/255, blue: 114/255)
+    let pinkLavender = Color(red: 253/255, green: 181/255, blue: 246/255)
+    let warmYellow = Color(red: 255/255, green: 187/255, blue: 54/255)
+
     var linearGradient: LinearGradient {
         LinearGradient(
             gradient: Gradient(colors: [
@@ -134,13 +137,13 @@ struct IstatisticView: View {
                     
                     VStack(alignment: .leading, spacing: 15) {
                         HStack() {
-                            Image(systemName: "waterbottle")
+                            Image(systemName: "calendar")
                                 .fontWeight(.regular)
                                 .foregroundColor(.orange)
                                 .padding(.top, 15)
                                 .padding(.leading, 10)
                             
-                            Text("Daily Water Consumption")
+                            Text("Weekly Water Consumption")
                                 .font(.headline)
                                 .fontWeight(.regular)
                                 .foregroundColor(.orange)
@@ -151,33 +154,50 @@ struct IstatisticView: View {
                         Chart {
                                     BarMark(x: .value("Day", "Monday"),
                                             y: .value("Population", 1))
-                                    .foregroundStyle(.pink)
+                                    .foregroundStyle(chartColor)
+                                    .shadow(color: chartColor.opacity(0.5), radius: 4, x: 0, y: -3)
 
                                     BarMark(x: .value("Day", "Tuesday"),
                                             y: .value("Population", 2))
-                                    .foregroundStyle(.green)
+                                    .foregroundStyle(lightLimeGreen)
+                                    .shadow(color: lightLimeGreen.opacity(0.5), radius: 6, x: 0, y: -3)
 
                                     BarMark(x: .value("Day", "Wednesday"),
                                             y: .value("Population", 3))
                                     .foregroundStyle(.blue)
+                                    .shadow(color: .blue.opacity(0.5), radius: 6, x: 0, y: -3)
                             
                                     BarMark(x: .value("Day", "Thursday"),
                                             y: .value("Population", 4))
-                                    .foregroundStyle(.pink)
+                                    .foregroundStyle(pinkLavender)
+                                    .shadow(color: pinkLavender.opacity(0.5), radius: 6, x: 0, y: -3)
 
                                     BarMark(x: .value("Day", "Friday"),
                                             y: .value("Population", 5))
-                                    .foregroundStyle(.green)
+                                    .foregroundStyle(warmYellow)
+                                    .shadow(color: warmYellow.opacity(0.5), radius: 6, x: 1, y: -3)
 
                                     BarMark(x: .value("Day", "Saturday"),
                                             y: .value("Population", 6))
-                                    .foregroundStyle(.blue)
+                                    .foregroundStyle(chartColor)
+                                    .shadow(color: chartColor.opacity(0.5), radius: 6, x: 0, y: -3)
                             
                                     BarMark(x: .value("Day", "Sunday"),
                                             y: .value("Population", 7))
                                     .foregroundStyle(.blue)
+                                    .shadow(color: .blue.opacity(0.5), radius: 6, x: 0, y: -3)
                                 }
                                 .aspectRatio(1, contentMode: .fit)
+                                .chartXAxis {
+                                    AxisMarks() { value in
+                                        AxisGridLine()
+                                            .foregroundStyle(Color.white.opacity(0.3))
+                                        AxisTick()
+                                            .foregroundStyle(Color.white.opacity(0.3))
+                                        AxisValueLabel()
+                                            .foregroundStyle(.white.opacity(0.5))
+                                    }
+                                }
                                 .frame(width: 310, height: 280)
                                 .padding()
                     }
