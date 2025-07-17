@@ -18,12 +18,15 @@ struct OnboardingCardView: View {
                 Image(onboarding.image)
                     .resizable()
                     .scaledToFit()
+                    .frame(maxWidth: 300, maxHeight: 300)
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 8, x: 6, y: 8)
                     .scaleEffect(isAnimating ? 1.0 : 0.6)
                 
                 Text(onboarding.title)
                     .foregroundColor(Color.white)
-                    .font(.largeTitle)
+                    .font(.title)
+                    .frame(maxWidth: 450, alignment: .center)
+                    .multilineTextAlignment(.center)
                     .fontWeight(.heavy)
                     .shadow(color: Color(red: 0, green: 0, blue: 0, opacity: 0.15), radius: 2, x: 2, y: 2)
                 
@@ -32,8 +35,6 @@ struct OnboardingCardView: View {
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 16)
                     .frame(maxWidth: 480)
-                
-                StartButtonView()
             }
         }
         .onAppear {

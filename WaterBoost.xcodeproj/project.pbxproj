@@ -16,6 +16,7 @@
 		FAAF2A3D2E28F44000A89795 /* OnboardingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A3C2E28F44000A89795 /* OnboardingData.swift */; };
 		FAAF2A3F2E28F55300A89795 /* OnboardingCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A3E2E28F55300A89795 /* OnboardingCardView.swift */; };
 		FAAF2A412E28F82100A89795 /* StartButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A402E28F82100A89795 /* StartButtonView.swift */; };
+		FAAF2A432E294E6A00A89795 /* UserNameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAAF2A422E294E6A00A89795 /* UserNameView.swift */; };
 		FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */; };
 		FACA10802D9883E600CC26EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107F2D9883E600CC26EB /* ContentView.swift */; };
 		FACA10822D9883E800CC26EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACA10812D9883E800CC26EB /* Assets.xcassets */; };
@@ -56,6 +57,7 @@
 		FAAF2A3C2E28F44000A89795 /* OnboardingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingData.swift; sourceTree = "<group>"; };
 		FAAF2A3E2E28F55300A89795 /* OnboardingCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCardView.swift; sourceTree = "<group>"; };
 		FAAF2A402E28F82100A89795 /* StartButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartButtonView.swift; sourceTree = "<group>"; };
+		FAAF2A422E294E6A00A89795 /* UserNameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserNameView.swift; sourceTree = "<group>"; };
 		FACA107A2D9883E600CC26EB /* WaterBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterBoostApp.swift; sourceTree = "<group>"; };
 		FACA107F2D9883E600CC26EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -137,6 +139,7 @@
 				FAAF2A3C2E28F44000A89795 /* OnboardingData.swift */,
 				FAAF2A3E2E28F55300A89795 /* OnboardingCardView.swift */,
 				FAAF2A402E28F82100A89795 /* StartButtonView.swift */,
+				FAAF2A422E294E6A00A89795 /* UserNameView.swift */,
 			);
 			path = WaterBoost;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */,
 				FAAF2A3D2E28F44000A89795 /* OnboardingData.swift in Sources */,
 				FACA10A82D98AE5E00CC26EB /* HomeView.swift in Sources */,
+				FAAF2A432E294E6A00A89795 /* UserNameView.swift in Sources */,
 				FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */,
 				FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */,
 				FACA10802D9883E600CC26EB /* ContentView.swift in Sources */,
