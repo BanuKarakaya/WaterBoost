@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct WaterBoostApp: App {
+    @AppStorage("isOnboarding") var isOnboarding: Bool = true
+    
     var body: some Scene {
         WindowGroup {
-            MainTabbedView()
+            if isOnboarding {
+               OnboardingView()
+            } else {
+               MainTabbedView()
+            }
         }
     }
 }

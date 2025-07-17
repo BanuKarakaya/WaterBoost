@@ -42,7 +42,7 @@ struct OnboardingCardView: View {
             }
         }
         .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
-        .background(onboarding.gradientColors)
+        .background(LinearGradient(gradient: Gradient(colors: onboarding.gradientColors), startPoint: .top, endPoint: .bottom))
         .cornerRadius(20)
         .padding(.horizontal, 20)
     }
