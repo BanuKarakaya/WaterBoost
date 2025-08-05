@@ -60,10 +60,10 @@ struct StraightImageView: View {
     var body: some View {
         ZStack {
             WaterWaveAnimation(percent: percent)
-                .frame(width: 250, height: 250) // Daire boyutu
+                .frame(width: 250, height: 250) 
                 .foregroundColor(Color(red: 183 / 255, green: 222 / 255, blue: 250 / 255))
-                .clipShape(Circle()) // Sınırlandır
-                .overlay( // İsteğe bağlı daire çerçevesi
+                .clipShape(Circle())
+                .overlay(
                      Circle()
                         .stroke(lightBlue, lineWidth: 6)
                 )

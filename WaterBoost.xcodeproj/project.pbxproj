@@ -10,6 +10,7 @@
 		FA2481A52E1AAD3B0085DC05 /* TabbedItems.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2481A42E1AAD3B0085DC05 /* TabbedItems.swift */; };
 		FA2481A72E1AADE50085DC05 /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */; };
 		FA39A3672E299D7500059BEA /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3662E299D7500059BEA /* LaunchScreen.swift */; };
+		FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */; };
 		FA8C317D2E1DA557002BEAC7 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317C2E1DA557002BEAC7 /* ListRow.swift */; };
 		FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */; };
 		FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */; };
@@ -46,6 +47,7 @@
 		FA2481A42E1AAD3B0085DC05 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
 		FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
 		FA39A3662E299D7500059BEA /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
+		FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalScreen.swift; sourceTree = "<group>"; };
 		FA8C317C2E1DA557002BEAC7 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 		FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstatisticView.swift; sourceTree = "<group>"; };
 		FACA107A2D9883E600CC26EB /* WaterBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -130,6 +132,7 @@
 				FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */,
 				FA8C317C2E1DA557002BEAC7 /* ListRow.swift */,
 				FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */,
+				FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */,
 			);
 			path = WaterBoost;
 			sourceTree = "<group>";
@@ -299,6 +302,7 @@
 				FACA10A82D98AE5E00CC26EB /* HomeView.swift in Sources */,
 				FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */,
 				FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */,
+				FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */,
 				FACA10802D9883E600CC26EB /* ContentView.swift in Sources */,
 				FA2481A52E1AAD3B0085DC05 /* TabbedItems.swift in Sources */,
 				FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */,

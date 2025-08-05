@@ -8,108 +8,114 @@
 import SwiftUI
 
 struct HomeView: View {
-    
-    let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
-    let shadowBlue = Color(red: 7/255, green: 100/255, blue: 155/255)
-    let peachColor = Color(red: 7/255, green: 70/255, blue: 107/255)
+
+    let darkBlue = Color(red: 0 / 255, green: 27 / 255, blue: 43 / 255)
+    let shadowBlue = Color(red: 7 / 255, green: 100 / 255, blue: 155 / 255)
     let lightBlue = Color(red: 183 / 255, green: 222 / 255, blue: 250 / 255)
+    
     let motionManager = MotionManager()
-    @State private var percent = 20.0
+    @State private var percent: Double = 0.0
+    @State private var waterConsumed: Int = 0
+    @State private var showGoalReachedAlert = false
+    @State private var hasShownGoalAlert = false
+    let dailyGoal = Int(UserDefaults.standard.string(forKey: "dailyGoal") ?? "2000") ?? 2000
     
     var body: some View {
         ZStack {
-            darkBlue
-                .ignoresSafeArea() // Safe area'yı da kaplasın
+            darkBlue.ignoresSafeArea()
             
             VStack {
-                // Tarih Metni
-                Text("Tuesday, Jun 1")
+                Text(getTodayFormatted())
                     .font(.title2)
                     .fontWeight(.medium)
                     .foregroundColor(.white)
                     .padding(.top, 20)
                 
-                // Üst Bilgiler (1100 ml - Divider - 2250 ml)
-                HStack(spacing: 30) { // Gereksiz Spacer'ları kaldır
-                    VStack {
-                        Text("1100 ml")
-                            .fontWeight(.heavy)
-                            .foregroundColor(.white)
-                        Text("Left to drink")
-                            .fontWeight(.medium)
-                            .foregroundColor(Color(red: 0.716, green: 0.847, blue: 0.913))
-                    }
+                HStack(spacing: 30) {
+                    waterInfoView(amount: waterConsumed, title: "Water Consumed")
                     
                     Divider()
-                        .frame(width: 1, height: 50) // Çizginin genişliği ve yüksekliği
+                        .frame(width: 1, height: 50)
                         .background(Color.white)
                     
-                    VStack {
-                        Text("2250 ml")
-                            .fontWeight(.heavy)
-                            .foregroundColor(.white)
-                        Text("Daily goal")
-                            .fontWeight(.medium)
-                            .foregroundColor(Color(red: 0.716, green: 0.847, blue: 0.913))
-                    }
+                    waterInfoView(amount: dailyGoal, title: "Daily goal")
                 }
-                .padding(.vertical, 20) // Yukarıdan ve aşağıdan boşluk bırak
+                .padding(.vertical, 20)
                 
-                // Ana Görsel
-                GravityAnimation(percent: percent).environmentObject(motionManager)
+                GravityAnimation(percent: percent)
+                    .environmentObject(motionManager)
                 
-                Spacer() // Alt tarafta boşluk bırak
+                Spacer()
                 
                 HStack(spacing: 15) {
-                    Button(action: {
-                        withAnimation {
-                            percent = min(percent + 20, 100) // 100'ü geçmesin
-                        }
-                    }) {
-                           Text("200 ml")
-                             .foregroundColor(lightBlue)
-                             .padding()
-                             .background(
-                               RoundedRectangle(cornerRadius: 10)
-                                 .stroke(lightBlue, lineWidth: 1)
-                             )
-                         }
-                    .shadow(color: .white, radius: 15, y: 1)
-                    
-                    Button(action: {
-                        withAnimation {
-                            percent = min(percent + 20, 100) // 100'ü geçmesin
-                        }
-                    }) {
-                           Text("300 ml")
-                             .foregroundColor(lightBlue)
-                             .padding()
-                             .background(
-                               RoundedRectangle(cornerRadius: 10)
-                                 .stroke(lightBlue, lineWidth: 1)
-                             )
-                         }
-                    .shadow(color: .white, radius: 15, y: 1)
-                    
-                    Button(action: {
-                        withAnimation {
-                            percent = min(percent + 20, 100) // 100'ü geçmesin
-                        }
-                    }) {
-                           Text("500 ml")
-                             .foregroundColor(lightBlue)
-                             .padding()
-                             .background(
-                               RoundedRectangle(cornerRadius: 10)
-                                 .stroke(lightBlue, lineWidth: 1)
-                             )
-                         }
-                    .shadow(color: .white, radius: 15, y: 1)
+                    waterButton(amount: 200)
+                    waterButton(amount: 300)
+                    waterButton(amount: 500)
                 }
-                
                 .padding(.bottom, 60)
             }
-            .padding(.horizontal, 30) // Kenarlardan içeri al
+            .padding(.horizontal, 30)
+        }
+        
+        .alert("Goal Reached🌟", isPresented: $showGoalReachedAlert) {
+            Button("Su içmeye devam et", role: .cancel) {
+                // sadece alert kapanır
+            }
+            Button("Siri’ye yönlendir") {
+                openSiriSettings()
+            }
+        } message: {
+            Text("Günlük su hedefini tamamladın!💧 Ekran süreni arttırmak için Siri'ye Hedefe Ulaştım demen yeterli 🚀")
+        }
+    }
+    
+    func waterInfoView(amount: Int, title: String) -> some View {
+        VStack {
+            Text("\(amount) ml")
+                .fontWeight(.heavy)
+                .foregroundColor(.white)
+            Text(title)
+                .fontWeight(.medium)
+                .foregroundColor(Color(red: 0.716, green: 0.847, blue: 0.913))
+        }
+    }
+    
+    func waterButton(amount: Int) -> some View {
+        Button(action: {
+            withAnimation {
+                let percentIncrease = Double(amount * 100) / Double(dailyGoal)
+                percent = min(percent + percentIncrease, 100)
+                waterConsumed += amount
+                
+                if waterConsumed >= dailyGoal && !hasShownGoalAlert {
+                    showGoalReachedAlert = true
+                    hasShownGoalAlert = true
+                }
+            }
+        }) {
+            Text("\(amount) ml")
+                .foregroundColor(lightBlue)
+                .padding()
+                .background(
+                    RoundedRectangle(cornerRadius: 10)
+                        .stroke(lightBlue, lineWidth: 1)
+                )
+        }
+        .shadow(color: .white, radius: 15, y: 1)
+    }
+    
+    func getTodayFormatted() -> String {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US")
+        formatter.dateStyle = .long
+        return formatter.string(from: Date())
+    }
+    
+    func openSiriSettings() {
+        if let url = URL(string: UIApplication.openSettingsURLString) {
+            if UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
         }
     }
 }
