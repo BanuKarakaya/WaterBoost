@@ -24,7 +24,7 @@
 		FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10A92D995FDF00CC26EB /* ListView.swift */; };
 		FACA10AC2D9ECACB00CC26EB /* GravityAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10AB2D9ECACB00CC26EB /* GravityAnimation.swift */; };
 		FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10AD2DA1BCFA00CC26EB /* WaterWaveAnimation.swift */; };
-		FAF57DE82E43261300AF5C74 /* DrinkWaterIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DE72E43261300AF5C74 /* DrinkWaterIntent.swift */; };
+		FAF57DEA2E43A64600AF5C74 /* ScreenTimeAccessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,7 +65,7 @@
 		FACA10A92D995FDF00CC26EB /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		FACA10AB2D9ECACB00CC26EB /* GravityAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityAnimation.swift; sourceTree = "<group>"; };
 		FACA10AD2DA1BCFA00CC26EB /* WaterWaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWaveAnimation.swift; sourceTree = "<group>"; };
-		FAF57DE72E43261300AF5C74 /* DrinkWaterIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrinkWaterIntent.swift; sourceTree = "<group>"; };
+		FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeAccessPage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
@@ -134,8 +134,8 @@
 				FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */,
 				FA8C317C2E1DA557002BEAC7 /* ListRow.swift */,
 				FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */,
+				FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */,
 				FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */,
-				FAF57DE72E43261300AF5C74 /* DrinkWaterIntent.swift */,
 			);
 			path = WaterBoost;
 			sourceTree = "<group>";
@@ -304,8 +304,8 @@
 				FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */,
 				FACA10A82D98AE5E00CC26EB /* HomeView.swift in Sources */,
 				FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */,
+				FAF57DEA2E43A64600AF5C74 /* ScreenTimeAccessPage.swift in Sources */,
 				FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */,
-				FAF57DE82E43261300AF5C74 /* DrinkWaterIntent.swift in Sources */,
 				FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */,
 				FACA10802D9883E600CC26EB /* ContentView.swift in Sources */,
 				FA2481A52E1AAD3B0085DC05 /* TabbedItems.swift in Sources */,

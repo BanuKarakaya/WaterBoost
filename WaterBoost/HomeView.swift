@@ -18,6 +18,7 @@ struct HomeView: View {
     @State private var waterConsumed: Int = 0
     @State private var showGoalReachedAlert = false
     @State private var hasShownGoalAlert = false
+    @State private var showRedirectAlert = false
     let dailyGoal = Int(UserDefaults.standard.string(forKey: "dailyGoal") ?? "2000") ?? 2000
     
     var body: some View {
@@ -56,17 +57,6 @@ struct HomeView: View {
             }
             .padding(.horizontal, 30)
         }
-        
-        .alert("Goal Reached🌟", isPresented: $showGoalReachedAlert) {
-            Button("Su içmeye devam et", role: .cancel) {
-                // sadece alert kapanır
-            }
-            Button("Siri’ye yönlendir") {
-                openSiriSettings()
-            }
-        } message: {
-            Text("Günlük su hedefini tamamladın!💧 Ekran süreni arttırmak için Siri'ye Hedefe Ulaştım demen yeterli 🚀")
-        }
     }
     
     func waterInfoView(amount: Int, title: String) -> some View {
@@ -86,11 +76,6 @@ struct HomeView: View {
                 let percentIncrease = Double(amount * 100) / Double(dailyGoal)
                 percent = min(percent + percentIncrease, 100)
                 waterConsumed += amount
-                
-                if waterConsumed >= dailyGoal && !hasShownGoalAlert {
-                    showGoalReachedAlert = true
-                    hasShownGoalAlert = true
-                }
             }
         }) {
             Text("\(amount) ml")
@@ -109,14 +94,6 @@ struct HomeView: View {
         formatter.locale = Locale(identifier: "en_US")
         formatter.dateStyle = .long
         return formatter.string(from: Date())
-    }
-    
-    func openSiriSettings() {
-        if let url = URL(string: UIApplication.openSettingsURLString) {
-            if UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-            }
-        }
     }
 }
 
