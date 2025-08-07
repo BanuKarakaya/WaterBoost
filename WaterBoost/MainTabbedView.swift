@@ -21,7 +21,7 @@ struct MainTabbedView: View {
                     .tag(0)
                 IstatisticView()
                     .tag(1)
-                ListView()
+                ScreenTimeAccessPage()
                     .tag(2)
             }
             

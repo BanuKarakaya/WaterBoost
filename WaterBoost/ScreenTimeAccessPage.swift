@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import FamilyControls
 
 struct ScreenTimeAccessPage: View {
     let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
@@ -30,17 +31,25 @@ struct ScreenTimeAccessPage: View {
                         .padding()
                
                     Button(action: {
-                        shouldNavigate = true
+                        Task {
+                            do {
+                                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+                                print("Permission granted")
+                                shouldNavigate = true
+                            } catch {
+                                print("Permission denied: \(error)")
+                            }
+                        }
                     }) {
                         HStack {
                             Text("Connect")
                         }
                         .frame(width: 250, height: 50)
-                        .background()
+                        .background(Color.white)
                         .cornerRadius(10)
                         
                     }
-                    NavigationLink(destination: MainTabbedView(), isActive: $shouldNavigate) {
+                    NavigationLink(destination: ListView(), isActive: $shouldNavigate) {
                         EmptyView()
                     }
                 }
