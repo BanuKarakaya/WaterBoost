@@ -1,14 +1,13 @@
 //
-//  ScreenTimeAccessPage.swift
+//  ApplicationSelectionPage.swift
 //  WaterBoost
 //
-//  Created by Banu on 6.08.2025.
+//  Created by Banu on 7.08.2025.
 //
 
 import SwiftUI
-import FamilyControls
 
-struct ScreenTimeAccessPage: View {
+struct NotificationPermissionPage: View {
     let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
     @State private var shouldNavigate = false
     
@@ -18,12 +17,12 @@ struct ScreenTimeAccessPage: View {
                 LinearGradient(gradient: Gradient(colors: [darkBlue, Color.blue]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
                 
                 VStack(spacing: 55) {
-                    Image("screentime")
+                    Image("notifications")
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: 250, maxHeight: 250)
                     
-                    Text("We need to access your screen time to move forward with this process.")
+                    Text("We'd like to send you a notification to remind you to drink water. Would you allow us to do so?")
                         .multilineTextAlignment(.center)
                         .font(.title2)
                         .fontWeight(.heavy)
@@ -31,25 +30,17 @@ struct ScreenTimeAccessPage: View {
                         .padding()
                
                     Button(action: {
-                        Task {
-                            do {
-                                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
-                                print("Permission granted")
-                                shouldNavigate = true
-                            } catch {
-                                print("Permission denied: \(error)")
-                            }
-                        }
+                        
                     }) {
                         HStack {
-                            Text("Connect")
+                            Text("Allow")
                         }
                         .frame(width: 250, height: 50)
                         .background(Color.white)
                         .cornerRadius(10)
                         
                     }
-                    NavigationLink(destination: NotificationPermissionPage(), isActive: $shouldNavigate) {
+                    NavigationLink(destination: ListView(), isActive: $shouldNavigate) {
                         EmptyView()
                     }
                 }
@@ -59,6 +50,7 @@ struct ScreenTimeAccessPage: View {
 }
 
 #Preview {
-    ScreenTimeAccessPage()
+    NotificationPermissionPage()
 }
+
 
