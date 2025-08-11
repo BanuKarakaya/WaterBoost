@@ -13,6 +13,8 @@
 		FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */; };
 		FA8C317D2E1DA557002BEAC7 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317C2E1DA557002BEAC7 /* ListRow.swift */; };
 		FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */; };
+		FABA3D362E49EB35009B5043 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA3D352E49EB35009B5043 /* DeviceActivity.framework */; };
+		FABA3D3E2E49EB35009B5043 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */; };
 		FACA10802D9883E600CC26EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107F2D9883E600CC26EB /* ContentView.swift */; };
 		FACA10822D9883E800CC26EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACA10812D9883E800CC26EB /* Assets.xcassets */; };
@@ -27,9 +29,17 @@
 		FAF57DEA2E43A64600AF5C74 /* ScreenTimeAccessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */; };
 		FAF57DED2E44A91300AF5C74 /* NotificationPermissionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DEC2E44A91300AF5C74 /* NotificationPermissionPage.swift */; };
 		FAF57DEF2E44AF5800AF5C74 /* ApplicationSelectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */; };
+		FAF57DF12E44B08200AF5C74 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DF02E44B08200AF5C74 /* MyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FABA3D3C2E49EB35009B5043 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACA10722D9883E600CC26EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FABA3D322E49EB35009B5043;
+			remoteInfo = DeviceActivityMonitorExtension;
+		};
 		FACA108B2D9883E800CC26EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FACA10722D9883E600CC26EB /* Project object */;
@@ -46,6 +56,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FAF57E062E44E8B500AF5C74 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FABA3D3E2E49EB35009B5043 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FA2481A42E1AAD3B0085DC05 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
 		FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
@@ -53,6 +77,8 @@
 		FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalScreen.swift; sourceTree = "<group>"; };
 		FA8C317C2E1DA557002BEAC7 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
 		FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstatisticView.swift; sourceTree = "<group>"; };
+		FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABA3D352E49EB35009B5043 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
 		FACA107A2D9883E600CC26EB /* WaterBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterBoostApp.swift; sourceTree = "<group>"; };
 		FACA107F2D9883E600CC26EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -71,13 +97,33 @@
 		FAF57DEB2E449CFF00AF5C74 /* WaterBoost.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterBoost.entitlements; sourceTree = "<group>"; };
 		FAF57DEC2E44A91300AF5C74 /* NotificationPermissionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionPage.swift; sourceTree = "<group>"; };
 		FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSelectionPage.swift; sourceTree = "<group>"; };
+		FAF57DF02E44B08200AF5C74 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FABA3D412E49EB35009B5043 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FABA3D322E49EB35009B5043 /* DeviceActivityMonitorExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		FAAF2A442E295B0C00A89795 /* OnBoarding */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OnBoarding; sourceTree = "<group>"; };
+		FABA3D372E49EB35009B5043 /* DeviceActivityMonitorExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FABA3D412E49EB35009B5043 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeviceActivityMonitorExtension; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FABA3D302E49EB35009B5043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABA3D362E49EB35009B5043 /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FACA10772D9883E600CC26EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -102,12 +148,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FABA3D342E49EB35009B5043 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FABA3D352E49EB35009B5043 /* DeviceActivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FACA10712D9883E600CC26EB = {
 			isa = PBXGroup;
 			children = (
 				FACA107C2D9883E600CC26EB /* WaterBoost */,
 				FACA108D2D9883E800CC26EB /* WaterBoostTests */,
 				FACA10972D9883E800CC26EB /* WaterBoostUITests */,
+				FABA3D372E49EB35009B5043 /* DeviceActivityMonitorExtension */,
+				FABA3D342E49EB35009B5043 /* Frameworks */,
 				FACA107B2D9883E600CC26EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -118,6 +174,7 @@
 				FACA107A2D9883E600CC26EB /* WaterBoost.app */,
 				FACA108A2D9883E800CC26EB /* WaterBoostTests.xctest */,
 				FACA10942D9883E800CC26EB /* WaterBoostUITests.xctest */,
+				FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -144,6 +201,7 @@
 				FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */,
 				FAF57DEC2E44A91300AF5C74 /* NotificationPermissionPage.swift */,
 				FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */,
+				FAF57DF02E44B08200AF5C74 /* MyModel.swift */,
 			);
 			path = WaterBoost;
 			sourceTree = "<group>";
@@ -176,6 +234,28 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FABA3D322E49EB35009B5043 /* DeviceActivityMonitorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABA3D422E49EB35009B5043 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */;
+			buildPhases = (
+				FABA3D2F2E49EB35009B5043 /* Sources */,
+				FABA3D302E49EB35009B5043 /* Frameworks */,
+				FABA3D312E49EB35009B5043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FABA3D372E49EB35009B5043 /* DeviceActivityMonitorExtension */,
+			);
+			name = DeviceActivityMonitorExtension;
+			packageProductDependencies = (
+			);
+			productName = DeviceActivityMonitorExtension;
+			productReference = FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FACA10792D9883E600CC26EB /* WaterBoost */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FACA109E2D9883E800CC26EB /* Build configuration list for PBXNativeTarget "WaterBoost" */;
@@ -183,10 +263,12 @@
 				FACA10762D9883E600CC26EB /* Sources */,
 				FACA10772D9883E600CC26EB /* Frameworks */,
 				FACA10782D9883E600CC26EB /* Resources */,
+				FAF57E062E44E8B500AF5C74 /* Embed Foundation Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FABA3D3D2E49EB35009B5043 /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FAAF2A442E295B0C00A89795 /* OnBoarding */,
@@ -239,9 +321,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					FABA3D322E49EB35009B5043 = {
+						CreatedOnToolsVersion = 16.3;
+					};
 					FACA10792D9883E600CC26EB = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -271,11 +356,19 @@
 				FACA10792D9883E600CC26EB /* WaterBoost */,
 				FACA10892D9883E800CC26EB /* WaterBoostTests */,
 				FACA10932D9883E800CC26EB /* WaterBoostUITests */,
+				FABA3D322E49EB35009B5043 /* DeviceActivityMonitorExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FABA3D312E49EB35009B5043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FACA10782D9883E600CC26EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -302,6 +395,13 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FABA3D2F2E49EB35009B5043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FACA10762D9883E600CC26EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -312,6 +412,7 @@
 				FA2481A72E1AADE50085DC05 /* MainTabbedView.swift in Sources */,
 				FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */,
 				FACA10A82D98AE5E00CC26EB /* HomeView.swift in Sources */,
+				FAF57DF12E44B08200AF5C74 /* MyModel.swift in Sources */,
 				FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */,
 				FAF57DEA2E43A64600AF5C74 /* ScreenTimeAccessPage.swift in Sources */,
 				FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */,
@@ -344,6 +445,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FABA3D3D2E49EB35009B5043 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FABA3D322E49EB35009B5043 /* DeviceActivityMonitorExtension */;
+			targetProxy = FABA3D3C2E49EB35009B5043 /* PBXContainerItemProxy */;
+		};
 		FACA108C2D9883E800CC26EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FACA10792D9883E600CC26EB /* WaterBoost */;
@@ -357,6 +463,60 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FABA3D3F2E49EB35009B5043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A5Y9WBD7WV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityMonitorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banu.WaterBoost.DeviceActivityMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FABA3D402E49EB35009B5043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A5Y9WBD7WV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityMonitorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.4;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banu.WaterBoost.DeviceActivityMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FACA109C2D9883E800CC26EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -539,7 +699,6 @@
 		FACA10A22D9883E800CC26EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -559,7 +718,6 @@
 		FACA10A32D9883E800CC26EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -579,7 +737,6 @@
 		FACA10A52D9883E800CC26EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
@@ -597,7 +754,6 @@
 		FACA10A62D9883E800CC26EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
@@ -615,6 +771,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FABA3D422E49EB35009B5043 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABA3D3F2E49EB35009B5043 /* Debug */,
+				FABA3D402E49EB35009B5043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FACA10752D9883E600CC26EB /* Build configuration list for PBXProject "WaterBoost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

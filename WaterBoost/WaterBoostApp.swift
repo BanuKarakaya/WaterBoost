@@ -13,17 +13,21 @@ struct WaterBoostApp: App {
     @State private var isActive = false
     @State private var showListView = false
     let lastAlertDateKey = "lastAlertDate"
+    @StateObject private var model = MyModel()
     
     var body: some Scene {
         WindowGroup {
             if isOnboarding {
                 OnboardingView()
+                    .environmentObject(model)
             } else {
                 if isActive {
                     if showListView {
                         DailyGoalScreen()
+                            .environmentObject(model)
                     } else {
                         MainTabbedView()
+                            .environmentObject(model)
                     }
                 } else {
                    LaunchScreen()
@@ -35,6 +39,7 @@ struct WaterBoostApp: App {
                         }
                             checkIfAlertShownToday()
                     }
+                    .environmentObject(model)
                 }
             }
         }

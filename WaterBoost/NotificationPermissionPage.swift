@@ -41,7 +41,7 @@ struct NotificationPermissionPage: View {
                         .cornerRadius(10)
                         
                     }
-                    NavigationLink(destination: ListView(), isActive: $shouldNavigate) {
+                    NavigationLink(destination: ApplicationSelectionPage(), isActive: $shouldNavigate) {
                         EmptyView()
                     }
                 }
