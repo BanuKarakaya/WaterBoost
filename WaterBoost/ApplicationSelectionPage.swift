@@ -74,6 +74,7 @@ struct ApplicationSelectionPage: View {
                         .fill(color)
                         .shadow(color: .black.opacity(0.05), radius: 10, x: 0, y: 2)
                   )
+                  .padding(.horizontal, 20)
                   
                   // Action Button
                   Button {
@@ -99,6 +100,7 @@ struct ApplicationSelectionPage: View {
                         RoundedRectangle(cornerRadius: 20)
                             .fill(.red)
                       )
+                      .padding(.horizontal, 20)
                   }
                   NavigationLink(destination: ListView(), isActive: $shouldNavigate) {
                       EmptyView()
@@ -107,13 +109,15 @@ struct ApplicationSelectionPage: View {
                }
             }
             .background(Color(.systemGray6).opacity(0.3))
-            .navigationTitle("App Blocker")
             .navigationBarTitleDisplayMode(.inline)
         }
         .familyActivityPicker(isPresented: $isDiscouragedPresented, selection: $model.selectionToDiscourage)
         .onAppear {
             pulseAnimation = true
             checkLockStatus()
+            NotificationCenter.default.addObserver(forName: .triggerFunction, object: nil, queue: .main) { _ in
+                unlockApps()
+            }
         }
     }
     
@@ -139,17 +143,18 @@ struct ApplicationSelectionPage: View {
             isLocked = false
             startUnlockTimer()
         }
+        print("çalıştı")
     }
     
     private func startUnlockTimer() {
-        unlockTimeRemaining = 30 * 60 // 30 minutes in seconds
+        unlockTimeRemaining = 2 * 60
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if unlockTimeRemaining > 0 {
                 unlockTimeRemaining -= 1
             } else {
                 stopUnlockTimer()
-                // Re-lock apps
+                
                 DispatchQueue.main.async {
                     lockApps()
                 }

@@ -1,14 +1,14 @@
 //
-//  NotificationPermissionPage.swift
+//  ScreenTimeAccessPage.swift
 //  WaterBoost
 //
-//  Created by Banu on 7.08.2025.
+//  Created by Banu on 6.08.2025.
 //
 
 import SwiftUI
-import UserNotifications
+import FamilyControls
 
-struct NotificationPermissionPage: View {
+struct ScreenTimeAccessPage: View {
     let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
     @State private var shouldNavigate = false
     
@@ -18,12 +18,12 @@ struct NotificationPermissionPage: View {
                 LinearGradient(gradient: Gradient(colors: [darkBlue, Color.blue]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
                 
                 VStack(spacing: 55) {
-                    Image("notifications")
+                    Image("screentime")
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: 250, maxHeight: 250)
                     
-                    Text("We'd like to send you a notification to remind you to drink water. Would you allow us to do so?")
+                    Text("We need to access your screen time to move forward with this process.")
                         .multilineTextAlignment(.center)
                         .font(.title2)
                         .fontWeight(.heavy)
@@ -31,37 +31,35 @@ struct NotificationPermissionPage: View {
                         .padding()
                
                     Button(action: {
-                        requestNotificationPermission()
+                        Task {
+                            do {
+                                try await AuthorizationCenter.shared.requestAuthorization(for: .individual)
+                                print("Permission granted")
+                                shouldNavigate = true
+                            } catch {
+                                print("Permission denied: \(error)")
+                            }
+                        }
                     }) {
                         HStack {
-                            Text("Allow")
+                            Text("Connect")
                         }
                         .frame(width: 250, height: 50)
                         .background(Color.white)
                         .cornerRadius(10)
                         
                     }
-                    NavigationLink(destination: ApplicationSelectionPage(), isActive: $shouldNavigate) {
+                    NavigationLink(destination: NotificationPermissionPage(), isActive: $shouldNavigate) {
                         EmptyView()
                     }
                 }
             }
         }
-    }
-    
-    func requestNotificationPermission() {
-        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            if let error = error {
-                print("İzin alınırken hata oluştu: \(error.localizedDescription)")
-            } else {
-                print("İzin verildi mi? \(granted)")
-                shouldNavigate = true
-            }
-        }
+        .cornerRadius(20)
     }
 }
 
 #Preview {
-    NotificationPermissionPage()
+    ScreenTimeAccessPage()
 }
 

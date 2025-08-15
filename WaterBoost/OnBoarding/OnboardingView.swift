@@ -17,7 +17,6 @@ struct OnboardingView: View {
                 OnboardingCardView(onboarding: item)
             }
             UserNameView()
-            LanguangeList()
           }
           .tabViewStyle(PageTabViewStyle())
           .padding(.vertical, 20)

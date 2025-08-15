@@ -22,11 +22,9 @@ class MyModel: ObservableObject {
     @AppStorage("applicationTokensData", store: UserDefaults(suiteName: "group.com.yourcompany.appblocker")) private var applicationTokensData: Data?
     @AppStorage("webDomainTokensData", store: UserDefaults(suiteName: "group.com.yourcompany.appblocker")) private var webDomainTokensData: Data?
     
-    // Schedule names
     private let lockScheduleName = DeviceActivityName("lock")
     private let unlockScheduleName = DeviceActivityName("unlock")
     
-    // Computed properties for tokens
     var categoryTokens: Set<ActivityCategoryToken>? {
         get {
             if let data = categoryTokensData {
@@ -170,7 +168,7 @@ class MyModel: ObservableObject {
     // Schedule apps to be locked again after 30 minutes
     private func scheduleRelock() {
         let now = Date()
-        let relockTime = Calendar.current.date(byAdding: .minute, value: 30, to: now)!
+        let relockTime = Calendar.current.date(byAdding: .minute, value: 2, to: now)!
         
         let startComponents = Calendar.current.dateComponents([.hour, .minute], from: relockTime)
         let endComponents = Calendar.current.dateComponents([.hour, .minute], from: Calendar.current.date(byAdding: .minute, value: 1, to: relockTime)!)

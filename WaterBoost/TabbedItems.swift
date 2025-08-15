@@ -10,27 +10,22 @@ import Foundation
 enum TabbedItems: Int, CaseIterable {
     case home = 0
     case istatistics
-    case list
     
     var title: String{
         switch self {
         case .home:
             return "Home"
         case .istatistics:
-            return "Statistics"
-        case .list:
-            return "List"
+            return "Control"
         }
     }
     
-    var iconName: String{
+    var iconName: String {
         switch self {
         case .home:
             return "home-icon"
         case .istatistics:
-            return "statistics-icon"
-        case .list:
-            return "list-icon"
+            return "control-icon"
         }
     }
 }

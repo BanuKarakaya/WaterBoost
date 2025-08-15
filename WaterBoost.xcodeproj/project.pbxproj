@@ -11,10 +11,9 @@
 		FA2481A72E1AADE50085DC05 /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */; };
 		FA39A3672E299D7500059BEA /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3662E299D7500059BEA /* LaunchScreen.swift */; };
 		FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */; };
-		FA8C317D2E1DA557002BEAC7 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317C2E1DA557002BEAC7 /* ListRow.swift */; };
-		FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */; };
 		FABA3D362E49EB35009B5043 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA3D352E49EB35009B5043 /* DeviceActivity.framework */; };
 		FABA3D3E2E49EB35009B5043 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FABA3D5D2E4B4445009B5043 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA3D5C2E4B4444009B5043 /* NotificationCenterExtension.swift */; };
 		FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */; };
 		FACA10802D9883E600CC26EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107F2D9883E600CC26EB /* ContentView.swift */; };
 		FACA10822D9883E800CC26EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACA10812D9883E800CC26EB /* Assets.xcassets */; };
@@ -26,8 +25,6 @@
 		FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10A92D995FDF00CC26EB /* ListView.swift */; };
 		FACA10AC2D9ECACB00CC26EB /* GravityAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10AB2D9ECACB00CC26EB /* GravityAnimation.swift */; };
 		FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10AD2DA1BCFA00CC26EB /* WaterWaveAnimation.swift */; };
-		FAF57DEA2E43A64600AF5C74 /* ScreenTimeAccessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */; };
-		FAF57DED2E44A91300AF5C74 /* NotificationPermissionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DEC2E44A91300AF5C74 /* NotificationPermissionPage.swift */; };
 		FAF57DEF2E44AF5800AF5C74 /* ApplicationSelectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */; };
 		FAF57DF12E44B08200AF5C74 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DF02E44B08200AF5C74 /* MyModel.swift */; };
 /* End PBXBuildFile section */
@@ -75,10 +72,9 @@
 		FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
 		FA39A3662E299D7500059BEA /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalScreen.swift; sourceTree = "<group>"; };
-		FA8C317C2E1DA557002BEAC7 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
-		FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstatisticView.swift; sourceTree = "<group>"; };
 		FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		FABA3D352E49EB35009B5043 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		FABA3D5C2E4B4444009B5043 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		FACA107A2D9883E600CC26EB /* WaterBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterBoostApp.swift; sourceTree = "<group>"; };
 		FACA107F2D9883E600CC26EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,9 +89,7 @@
 		FACA10A92D995FDF00CC26EB /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		FACA10AB2D9ECACB00CC26EB /* GravityAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityAnimation.swift; sourceTree = "<group>"; };
 		FACA10AD2DA1BCFA00CC26EB /* WaterWaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWaveAnimation.swift; sourceTree = "<group>"; };
-		FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeAccessPage.swift; sourceTree = "<group>"; };
 		FAF57DEB2E449CFF00AF5C74 /* WaterBoost.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterBoost.entitlements; sourceTree = "<group>"; };
-		FAF57DEC2E44A91300AF5C74 /* NotificationPermissionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationPermissionPage.swift; sourceTree = "<group>"; };
 		FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSelectionPage.swift; sourceTree = "<group>"; };
 		FAF57DF02E44B08200AF5C74 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -195,13 +189,10 @@
 				FACA10832D9883E800CC26EB /* Preview Content */,
 				FA2481A42E1AAD3B0085DC05 /* TabbedItems.swift */,
 				FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */,
-				FA8C317C2E1DA557002BEAC7 /* ListRow.swift */,
-				FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */,
-				FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */,
 				FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */,
-				FAF57DEC2E44A91300AF5C74 /* NotificationPermissionPage.swift */,
 				FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */,
 				FAF57DF02E44B08200AF5C74 /* MyModel.swift */,
+				FABA3D5C2E4B4444009B5043 /* NotificationCenterExtension.swift */,
 			);
 			path = WaterBoost;
 			sourceTree = "<group>";
@@ -407,21 +398,18 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACA10AC2D9ECACB00CC26EB /* GravityAnimation.swift in Sources */,
-				FAF57DED2E44A91300AF5C74 /* NotificationPermissionPage.swift in Sources */,
 				FA39A3672E299D7500059BEA /* LaunchScreen.swift in Sources */,
 				FA2481A72E1AADE50085DC05 /* MainTabbedView.swift in Sources */,
 				FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */,
 				FACA10A82D98AE5E00CC26EB /* HomeView.swift in Sources */,
 				FAF57DF12E44B08200AF5C74 /* MyModel.swift in Sources */,
 				FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */,
-				FAF57DEA2E43A64600AF5C74 /* ScreenTimeAccessPage.swift in Sources */,
-				FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */,
 				FAF57DEF2E44AF5800AF5C74 /* ApplicationSelectionPage.swift in Sources */,
 				FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */,
+				FABA3D5D2E4B4445009B5043 /* NotificationCenterExtension.swift in Sources */,
 				FACA10802D9883E600CC26EB /* ContentView.swift in Sources */,
 				FA2481A52E1AAD3B0085DC05 /* TabbedItems.swift in Sources */,
 				FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */,
-				FA8C317D2E1DA557002BEAC7 /* ListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

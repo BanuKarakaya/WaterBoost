@@ -77,6 +77,7 @@ struct HomeView: View {
                 percent = min(percent + percentIncrease, 100)
                 waterConsumed += amount
             }
+            NotificationCenter.default.post(name: .triggerFunction, object: nil)
         }) {
             Text("\(amount) ml")
                 .foregroundColor(lightBlue)
