@@ -13,6 +13,7 @@
 		FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */; };
 		FA47F62C2E54BC2E00F4D24F /* DeviceActivityScreenReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = FA47F6202E54BC2E00F4D24F /* DeviceActivityScreenReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FA47F63A2E56022100F4D24F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F6392E56022100F4D24F /* ChartView.swift */; };
+		FA6C1DB52E59D378008BB431 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA6C1DB42E59D378008BB431 /* ConfettiSwiftUI */; };
 		FABA3D362E49EB35009B5043 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA3D352E49EB35009B5043 /* DeviceActivity.framework */; };
 		FABA3D3E2E49EB35009B5043 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		FABA3D5D2E4B4445009B5043 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA3D5C2E4B4444009B5043 /* NotificationCenterExtension.swift */; };
@@ -159,6 +160,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6C1DB52E59D378008BB431 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +409,9 @@
 				Base,
 			);
 			mainGroup = FACA10712D9883E600CC26EB;
+			packageReferences = (
+				FA6C1DB32E59D378008BB431 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = FACA107B2D9883E600CC26EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -775,7 +780,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WaterBoost/WaterBoost.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterBoost/Preview Content\"";
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
 				ENABLE_PREVIEWS = YES;
@@ -805,7 +810,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = WaterBoost/WaterBoost.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterBoost/Preview Content\"";
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
 				ENABLE_PREVIEWS = YES;
@@ -958,6 +963,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA6C1DB32E59D378008BB431 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA6C1DB42E59D378008BB431 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA6C1DB32E59D378008BB431 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FACA10722D9883E600CC26EB /* Project object */;
 }

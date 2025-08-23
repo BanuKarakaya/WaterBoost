@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct HomeView: View {
 
@@ -20,6 +21,8 @@ struct HomeView: View {
     @State private var showRedirectAlert = false
     let dailyGoal = Int(UserDefaults.standard.string(forKey: "dailyGoal") ?? "2000") ?? 2000
     @State private var waterConsumed = Int(UserDefaults.standard.string(forKey: "waterConsumed") ?? "0") ?? 0
+    @State private var hasReachedGoal = false   // sadece ilk defa konfeti için
+    @State private var confettiTrigger = 0
     
     var body: some View {
         ZStack {
@@ -57,6 +60,7 @@ struct HomeView: View {
             }
             .padding(.horizontal, 30)
         }
+        .confettiCannon(trigger: $confettiTrigger, num: 160, confettiSize: 8)
     }
     
     func waterInfoView(amount: Int, title: String) -> some View {
@@ -79,6 +83,13 @@ struct HomeView: View {
             }
             UserDefaults.standard.set(waterConsumed, forKey: "waterConsumed")
             NotificationCenter.default.post(name: .triggerFunction, object: nil)
+            
+            if waterConsumed >= dailyGoal && !hasReachedGoal {
+                hasReachedGoal = true
+                confettiTrigger += 1   // konfeti patlat
+                
+            }
+            
         }) {
             Text("\(amount) ml")
                 .foregroundColor(lightBlue)
