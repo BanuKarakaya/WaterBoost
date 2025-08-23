@@ -19,7 +19,7 @@ struct OnboardingView: View {
               UserNameView1()
           }
           .tabViewStyle(PageTabViewStyle())
-         // .padding(.vertical, 20)
+          .ignoresSafeArea()
           .background(darkBlue)
     }
 }
