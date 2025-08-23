@@ -15,9 +15,10 @@ struct MainTabbedView: View {
 
     var body: some View {
         
-        ZStack(alignment: .bottom){
+        ZStack(alignment: .bottom) {
             Text("Detay Sayfası")
                 .navigationBarBackButtonHidden(true)
+            
             TabView(selection: $selectedTab) {
                 ContentView()
                     .tag(0)

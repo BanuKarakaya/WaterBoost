@@ -8,6 +8,8 @@
 import SwiftUI
 import FamilyControls
 
+
+
 struct ScreenTimeAccessPage: View {
     let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
     @State private var shouldNavigate = false
@@ -18,6 +20,7 @@ struct ScreenTimeAccessPage: View {
                 LinearGradient(gradient: Gradient(colors: [darkBlue, Color.blue]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
                 
                 VStack(spacing: 55) {
+                    
                     Image("screentime")
                         .resizable()
                         .scaledToFit()
@@ -49,13 +52,15 @@ struct ScreenTimeAccessPage: View {
                         .cornerRadius(10)
                         
                     }
-                    NavigationLink(destination: NotificationPermissionPage(), isActive: $shouldNavigate) {
+                    NavigationLink(destination: NotificationPermissionPage()
+                        .navigationBarBackButtonHidden(true)      // Back butonunu gizler
+                        .toolbar(.hidden, for: .navigationBar),
+                    isActive: $shouldNavigate) {
                         EmptyView()
                     }
                 }
             }
         }
-        .cornerRadius(20)
     }
 }
 

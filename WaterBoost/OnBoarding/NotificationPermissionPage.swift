@@ -15,11 +15,13 @@ struct NotificationPermissionPage: View {
             ZStack {
                 LinearGradient(gradient: Gradient(colors: [darkBlue, Color.blue]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
                 
-                VStack(spacing: 55) {
+                VStack(spacing: 35) {
                     Image("notifications")
                         .resizable()
                         .scaledToFit()
                         .frame(maxWidth: 250, maxHeight: 250)
+                        .padding(.top, -30)
+                    
                     
                     Text("We'd like to send you a notification to remind you to drink water. Would you allow us to do so?")
                         .multilineTextAlignment(.center)
@@ -37,10 +39,11 @@ struct NotificationPermissionPage: View {
                         .frame(width: 250, height: 50)
                         .background(Color.white)
                         .cornerRadius(10)
-                        
                 }
             }
         }
+            .navigationBarBackButtonHidden(true)      // Back butonunu gizler
+            .toolbar(.hidden, for: .navigationBar)
     }
     
     func requestNotificationPermission() {

@@ -15,11 +15,11 @@ struct HomeView: View {
     
     let motionManager = MotionManager()
     @State private var percent: Double = 0.0
-    @State private var waterConsumed: Int = 0
     @State private var showGoalReachedAlert = false
     @State private var hasShownGoalAlert = false
     @State private var showRedirectAlert = false
     let dailyGoal = Int(UserDefaults.standard.string(forKey: "dailyGoal") ?? "2000") ?? 2000
+    @State private var waterConsumed = Int(UserDefaults.standard.string(forKey: "waterConsumed") ?? "0") ?? 0
     
     var body: some View {
         ZStack {
@@ -77,6 +77,7 @@ struct HomeView: View {
                 percent = min(percent + percentIncrease, 100)
                 waterConsumed += amount
             }
+            UserDefaults.standard.set(waterConsumed, forKey: "waterConsumed")
             NotificationCenter.default.post(name: .triggerFunction, object: nil)
         }) {
             Text("\(amount) ml")

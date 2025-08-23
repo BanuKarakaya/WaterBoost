@@ -7,6 +7,14 @@
 
 import SwiftUI
 
+struct UserNameView1: View {
+    var body: some View {
+        NavigationStack {
+            UserNameView()
+        }
+    }
+}
+
 struct UserNameView: View {
    
    @State private var isAnimating: Bool = false
@@ -16,7 +24,6 @@ struct UserNameView: View {
    @AppStorage("isOnboarding") var isOnboarding: Bool?
    
    var body: some View {
-       NavigationStack {
            ZStack {
                VStack(spacing: 20) {
                    Image("name")
@@ -75,11 +82,10 @@ struct UserNameView: View {
            }
            .frame(minWidth: 0, maxWidth: .infinity, minHeight: 0, maxHeight: .infinity, alignment: .center)
            .background(LinearGradient(gradient: Gradient(colors: [darkBlue, Color.blue]), startPoint: .top, endPoint: .bottom))
-           .cornerRadius(20)
-           .padding(.horizontal, 20)
+           //.cornerRadius(20)
+           //.padding(.horizontal, 20)
        }
    }
-}
 
 #Preview {
    UserNameView()
