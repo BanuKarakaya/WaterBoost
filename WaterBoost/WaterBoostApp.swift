@@ -32,7 +32,7 @@ struct WaterBoostApp: App {
                 } else {
                    LaunchScreen()
                         .onAppear {
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                                 withAnimation {
                                     self.isActive = true
                             }

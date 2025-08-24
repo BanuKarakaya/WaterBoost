@@ -21,7 +21,12 @@ struct HomeView: View {
     @State private var showRedirectAlert = false
     let dailyGoal = Int(UserDefaults.standard.string(forKey: "dailyGoal") ?? "2000") ?? 2000
     @State private var waterConsumed = Int(UserDefaults.standard.string(forKey: "waterConsumed") ?? "0") ?? 0
-    @State private var hasReachedGoal = false   // sadece ilk defa konfeti için
+    @State private var hasReachedGoal: Bool = false
+
+        init() {
+            _hasReachedGoal = State(initialValue: UserDefaults.standard.bool(forKey: HomeView.todayKey()))
+        }
+  // sadece ilk defa konfeti için
     @State private var confettiTrigger = 0
     
     var body: some View {
@@ -46,7 +51,7 @@ struct HomeView: View {
                 }
                 .padding(.vertical, 20)
                 
-                GravityAnimation(percent: percent)
+                GravityAnimation(percent: (Double(waterConsumed) / Double(dailyGoal)) * 100)
                     .environmentObject(motionManager)
                 
                 Spacer()
@@ -78,6 +83,7 @@ struct HomeView: View {
         Button(action: {
             withAnimation {
                 let percentIncrease = Double(amount * 100) / Double(dailyGoal)
+                var percent = (Double(waterConsumed) / Double(dailyGoal)) * 100
                 percent = min(percent + percentIncrease, 100)
                 waterConsumed += amount
             }
@@ -86,8 +92,8 @@ struct HomeView: View {
             
             if waterConsumed >= dailyGoal && !hasReachedGoal {
                 hasReachedGoal = true
+                UserDefaults.standard.set(true, forKey: HomeView.todayKey())
                 confettiTrigger += 1   // konfeti patlat
-                
             }
             
         }) {
@@ -107,6 +113,12 @@ struct HomeView: View {
         formatter.locale = Locale(identifier: "en_US")
         formatter.dateStyle = .long
         return formatter.string(from: Date())
+    }
+    
+    static func todayKey() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd" // sadece günü ayı yılı sakla
+        return "goalReached_\(formatter.string(from: Date()))"
     }
 }
 
