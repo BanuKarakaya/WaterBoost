@@ -6,6 +6,7 @@
 //
 
 import DeviceActivity
+import ManagedSettings
 
 // Optionally override any of the functions below.
 // Make sure that your class name matches the NSExtensionPrincipalClass in your Info.plist.

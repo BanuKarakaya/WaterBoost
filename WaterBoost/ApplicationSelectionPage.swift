@@ -19,6 +19,7 @@ struct ApplicationSelectionPage: View {
     @State private var shouldNavigate = false
     let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
     let color = Color(red: 6/255, green: 62/255, blue: 96/255)
+    let username = UserDefaults.standard.string(forKey: "username") ?? "No user"
     
     var body: some View {
         NavigationView {
@@ -28,7 +29,7 @@ struct ApplicationSelectionPage: View {
                     VStack(spacing: 24) {
                         Spacer(minLength: 10)
                         
-                        Text("Hello Banu,")
+                        Text("Hello \(username),")
                             .foregroundColor(.white)
                             .font(.title2)
                             .fontWeight(.semibold)
@@ -169,7 +170,7 @@ struct ApplicationSelectionPage: View {
     }
     
     private func startUnlockTimer() {
-        unlockTimeRemaining = 2 * 60
+        unlockTimeRemaining = 30 * 60
         
         timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
             if unlockTimeRemaining > 0 {

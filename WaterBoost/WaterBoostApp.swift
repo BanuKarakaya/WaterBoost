@@ -20,14 +20,17 @@ struct WaterBoostApp: App {
             if isOnboarding {
                 OnboardingView()
                     .environmentObject(model)
+                    .preferredColorScheme(.dark)
             } else {
                 if isActive {
                     if showListView {
                         DailyGoalScreen()
                             .environmentObject(model)
+                            .preferredColorScheme(.dark)
                     } else {
                         MainTabbedView()
                             .environmentObject(model)
+                            .preferredColorScheme(.dark)
                     }
                 } else {
                    LaunchScreen()
@@ -40,6 +43,7 @@ struct WaterBoostApp: App {
                             checkIfAlertShownToday()
                     }
                     .environmentObject(model)
+                    .preferredColorScheme(.dark)
                 }
             }
         }

@@ -168,7 +168,7 @@ class MyModel: ObservableObject {
     // Schedule apps to be locked again after 30 minutes
     private func scheduleRelock() {
         let now = Date()
-        let relockTime = Calendar.current.date(byAdding: .minute, value: 2, to: now)!
+        let relockTime = Calendar.current.date(byAdding: .minute, value: 30, to: now)!
         
         let startComponents = Calendar.current.dateComponents([.hour, .minute], from: relockTime)
         let endComponents = Calendar.current.dateComponents([.hour, .minute], from: Calendar.current.date(byAdding: .minute, value: 1, to: relockTime)!)
