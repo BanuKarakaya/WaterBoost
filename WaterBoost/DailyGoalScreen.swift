@@ -41,6 +41,11 @@ struct DailyGoalScreen: View {
                     Button(action: {
                         UserDefaults.standard.set(dailyGoal, forKey: "dailyGoal")
                         UserDefaults.standard.set(0, forKey: "waterConsumed")
+                        
+                        // Seçilen uygulamaları kilitle
+                        print("🔒 Daily goal set - locking apps...")
+                        MyModel.shared.lockApps()
+                        
                         shouldNavigate = true
                     }) {
                         HStack(spacing: 8) {

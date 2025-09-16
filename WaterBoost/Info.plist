@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>NSUserNotificationUsageDescription</key>
+	<string>WaterBoost would like to send you reminders to help you stay hydrated and reach your daily water goals.</string>
+	<key>NSUserNotificationsUsageDescription</key>
+	<string>WaterBoost would like to send you reminders to help you stay hydrated and reach your daily water goals.</string>
+	<key>NSFamilyControlsUsageDescription</key>
+	<string>WaterBoost requires permission to access screen time to temporarily limit access to your chosen apps until you reach your daily water goal.</string>
+</dict>
+</plist>

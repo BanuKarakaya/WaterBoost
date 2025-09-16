@@ -10,6 +10,7 @@ import UserNotifications
 
 struct NotificationPermissionPage: View {
     let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
+    @State private var shouldNavigate = false
     
     var body: some View {
             ZStack {
@@ -40,6 +41,10 @@ struct NotificationPermissionPage: View {
                         .background(Color.white)
                         .cornerRadius(10)
                 }
+                
+                NavigationLink(destination: ScreenTimeAccessPage(), isActive: $shouldNavigate) {
+                    EmptyView()
+                }
             }
         }
             .navigationBarBackButtonHidden(true)      // Back butonunu gizler
@@ -48,11 +53,13 @@ struct NotificationPermissionPage: View {
     
     func requestNotificationPermission() {
         UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound]) { granted, error in
-            if let error = error {
-                print("İzin alınırken hata oluştu: \(error.localizedDescription)")
-            } else {
-                print("İzin verildi mi? \(granted)")
-                NotificationCenter.default.post(name: .navigateTrigger, object: nil)
+            DispatchQueue.main.async {
+                if let error = error {
+                    print("İzin alınırken hata oluştu: \(error.localizedDescription)")
+                } else {
+                    print("İzin verildi mi? \(granted)")
+                }
+                shouldNavigate = true
             }
         }
     }

@@ -66,6 +66,15 @@ struct HomeView: View {
             .padding(.horizontal, 30)
         }
         .confettiCannon(trigger: $confettiTrigger, num: 160, confettiSize: 8)
+        .onAppear {
+            // Check if relock time has passed every time HomeView appears
+            MyModel.shared.checkAndApplyScheduledRelock()
+            
+            // Start monitoring if unlock is active and not already running
+            if UserDefaults.standard.bool(forKey: "isUnlockActive") {
+                MyModel.shared.startMonitoringIfNeeded()
+            }
+        }
     }
     
     func waterInfoView(amount: Int, title: String) -> some View {
@@ -94,6 +103,11 @@ struct HomeView: View {
                 hasReachedGoal = true
                 UserDefaults.standard.set(true, forKey: HomeView.todayKey())
                 confettiTrigger += 1   // konfeti patlat
+               
+            } else if waterConsumed >= dailyGoal {
+                // Daily goal'a ulaşıldı - blokları kaldır
+                print("🎯 Daily goal reached! Unlocking apps...")
+                MyModel.shared.unlockApps()
             }
             
         }) {

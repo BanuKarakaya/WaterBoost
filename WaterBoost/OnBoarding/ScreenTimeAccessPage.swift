@@ -52,10 +52,7 @@ struct ScreenTimeAccessPage: View {
                         .cornerRadius(10)
                         
                     }
-                    NavigationLink(destination: NotificationPermissionPage()
-                        .navigationBarBackButtonHidden(true)      // Back butonunu gizler
-                        .toolbar(.hidden, for: .navigationBar),
-                    isActive: $shouldNavigate) {
+                    NavigationLink(destination: OnboardingAppSelectionPage(), isActive: $shouldNavigate) {
                         EmptyView()
                     }
                 }

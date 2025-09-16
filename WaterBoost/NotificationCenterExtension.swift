@@ -10,4 +10,5 @@ import Foundation
 extension Notification.Name {
     static let triggerFunction = Notification.Name("triggerFunction")
     static let navigateTrigger = Notification.Name("navigateTrigger")
+    static let dismissDailyGoal = Notification.Name("dismissDailyGoal")
 }

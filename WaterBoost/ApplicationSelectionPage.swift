@@ -13,8 +13,6 @@ struct ApplicationSelectionPage: View {
     @StateObject private var model = MyModel.shared
     @State private var isDiscouragedPresented = false
     @State private var isLocked = false
-    @State private var unlockTimeRemaining: TimeInterval = 0
-    @State private var timer: Timer?
     @State private var pulseAnimation = false
     @State private var shouldNavigate = false
     let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
@@ -138,9 +136,8 @@ struct ApplicationSelectionPage: View {
         .onAppear {
             pulseAnimation = true
             checkLockStatus()
-            NotificationCenter.default.addObserver(forName: .triggerFunction, object: nil, queue: .main) { _ in
-                unlockApps()
-            }
+            // Su ekleme butonuna basınca artık blok kalkmayacak
+            // Sadece daily goal'a ulaştığında kalkacak
         }
     }
     
@@ -155,41 +152,11 @@ struct ApplicationSelectionPage: View {
         withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
             model.lockApps()
             isLocked = true
-            stopUnlockTimer()
         }
         shouldNavigate = true
     }
     
-    private func unlockApps() {
-        withAnimation(.spring(response: 0.6, dampingFraction: 0.8)) {
-            model.unlockApps()
-            isLocked = false
-            startUnlockTimer()
-        }
-        print("çalıştı")
-    }
-    
-    private func startUnlockTimer() {
-        unlockTimeRemaining = 30 * 60
-        
-        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { _ in
-            if unlockTimeRemaining > 0 {
-                unlockTimeRemaining -= 1
-            } else {
-                stopUnlockTimer()
-                
-                DispatchQueue.main.async {
-                    lockApps()
-                }
-            }
-        }
-    }
-    
-    private func stopUnlockTimer() {
-        timer?.invalidate()
-        timer = nil
-        unlockTimeRemaining = 0
-    }
+
     
     private func formattedTime(_ timeInterval: TimeInterval) -> String {
         let formatter = DateComponentsFormatter()
