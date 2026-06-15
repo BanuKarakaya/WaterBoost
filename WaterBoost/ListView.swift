@@ -6,16 +6,22 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct ListView: View {
-    let darkBlue = Color(red: 0/255, green: 27/255, blue: 43/255)
-    
-    var body: some View {
-        ZStack {
-            darkBlue.ignoresSafeArea()
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+    @State private var counter = 0
+        
+        var body: some View {
+            VStack {
+                Button(action: {
+                    counter += 1
+                }) {
+                    Text("🎃")
+                        .font(.system(size: 50))
+                }
+            }
+            .confettiCannon(trigger: $counter, num: 160, confettiSize: 8) // 👈 Container'a eklendi
         }
-    }
 }
 
 #Preview {

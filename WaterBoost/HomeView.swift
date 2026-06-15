@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import ConfettiSwiftUI
 
 struct HomeView: View {
 
@@ -15,11 +16,18 @@ struct HomeView: View {
     
     let motionManager = MotionManager()
     @State private var percent: Double = 0.0
-    @State private var waterConsumed: Int = 0
     @State private var showGoalReachedAlert = false
     @State private var hasShownGoalAlert = false
     @State private var showRedirectAlert = false
     let dailyGoal = Int(UserDefaults.standard.string(forKey: "dailyGoal") ?? "2000") ?? 2000
+    @State private var waterConsumed = Int(UserDefaults.standard.string(forKey: "waterConsumed") ?? "0") ?? 0
+    @State private var hasReachedGoal: Bool = false
+
+        init() {
+            _hasReachedGoal = State(initialValue: UserDefaults.standard.bool(forKey: HomeView.todayKey()))
+        }
+  // sadece ilk defa konfeti için
+    @State private var confettiTrigger = 0
     
     var body: some View {
         ZStack {
@@ -43,7 +51,7 @@ struct HomeView: View {
                 }
                 .padding(.vertical, 20)
                 
-                GravityAnimation(percent: percent)
+                GravityAnimation(percent: (Double(waterConsumed) / Double(dailyGoal)) * 100)
                     .environmentObject(motionManager)
                 
                 Spacer()
@@ -56,6 +64,16 @@ struct HomeView: View {
                 .padding(.bottom, 60)
             }
             .padding(.horizontal, 30)
+        }
+        .confettiCannon(trigger: $confettiTrigger, num: 160, confettiSize: 8)
+        .onAppear {
+            // Check if relock time has passed every time HomeView appears
+            MyModel.shared.checkAndApplyScheduledRelock()
+            
+            // Start monitoring if unlock is active and not already running
+            if UserDefaults.standard.bool(forKey: "isUnlockActive") {
+                MyModel.shared.startMonitoringIfNeeded()
+            }
         }
     }
     
@@ -74,9 +92,24 @@ struct HomeView: View {
         Button(action: {
             withAnimation {
                 let percentIncrease = Double(amount * 100) / Double(dailyGoal)
+                var percent = (Double(waterConsumed) / Double(dailyGoal)) * 100
                 percent = min(percent + percentIncrease, 100)
                 waterConsumed += amount
             }
+            UserDefaults.standard.set(waterConsumed, forKey: "waterConsumed")
+            NotificationCenter.default.post(name: .triggerFunction, object: nil)
+            
+            if waterConsumed >= dailyGoal && !hasReachedGoal {
+                hasReachedGoal = true
+                UserDefaults.standard.set(true, forKey: HomeView.todayKey())
+                confettiTrigger += 1   // konfeti patlat
+               
+            } else if waterConsumed >= dailyGoal {
+                // Daily goal'a ulaşıldı - blokları kaldır
+                print("🎯 Daily goal reached! Unlocking apps...")
+                MyModel.shared.unlockApps()
+            }
+            
         }) {
             Text("\(amount) ml")
                 .foregroundColor(lightBlue)
@@ -94,6 +127,12 @@ struct HomeView: View {
         formatter.locale = Locale(identifier: "en_US")
         formatter.dateStyle = .long
         return formatter.string(from: Date())
+    }
+    
+    static func todayKey() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd" // sadece günü ayı yılı sakla
+        return "goalReached_\(formatter.string(from: Date()))"
     }
 }
 

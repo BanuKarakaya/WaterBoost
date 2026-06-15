@@ -16,7 +16,8 @@ struct DailyGoalScreen: View {
     var body: some View {
         NavigationStack {
             ZStack {
-                darkBlue.ignoresSafeArea()
+                LinearGradient(gradient: Gradient(colors: [darkBlue, Color.blue]), startPoint: .top, endPoint: .bottom).ignoresSafeArea()
+                
                 VStack(spacing: 55) {
                     Image("target")
                         .resizable()
@@ -27,25 +28,32 @@ struct DailyGoalScreen: View {
                         .multilineTextAlignment(.center)
                         .font(.title2)
                         .fontWeight(.heavy)
-                        .foregroundStyle(.white.opacity(0.7))
+                        .foregroundStyle(.white.opacity(0.9))
                     
-                    TextField("Enter Your Goal", text: $dailyGoal)
+                    TextField("", text: $dailyGoal, prompt: Text("Enter your goal").foregroundColor(darkBlue.opacity(0.4)))
                         .padding()
                         .frame(maxWidth: 250, alignment: .center)
                         .background(.white.opacity(0.8))
-                        .foregroundStyle(darkBlue)
                         .keyboardType(.numberPad)
                         .clipShape(RoundedRectangle(cornerRadius: 7))
                         .padding(-30)
                    
                     Button(action: {
                         UserDefaults.standard.set(dailyGoal, forKey: "dailyGoal")
+                        UserDefaults.standard.set(0, forKey: "waterConsumed")
+                        
+                        // Seçilen uygulamaları kilitle
+                        print("🔒 Daily goal set - locking apps...")
+                        MyModel.shared.lockApps()
+                        
                         shouldNavigate = true
                     }) {
                         HStack(spacing: 8) {
                             Text("Start")
+                                .foregroundColor(.white)
                             Image(systemName: "arrow.right.circle")
                                 .imageScale(.large)
+                                .foregroundColor(.white)
                         }
                         .padding(.horizontal, 16)
                         .padding(.vertical, 10)

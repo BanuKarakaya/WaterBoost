@@ -11,8 +11,13 @@
 		FA2481A72E1AADE50085DC05 /* MainTabbedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */; };
 		FA39A3672E299D7500059BEA /* LaunchScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3662E299D7500059BEA /* LaunchScreen.swift */; };
 		FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */; };
-		FA8C317D2E1DA557002BEAC7 /* ListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317C2E1DA557002BEAC7 /* ListRow.swift */; };
-		FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */; };
+		FA3B1AFA2E5DC35100B27649 /* ConfettiSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = FA3B1AF92E5DC35100B27649 /* ConfettiSwiftUI */; };
+		FA3B1B1B2E5DC37B00B27649 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DF02E44B08200AF5C74 /* MyModel.swift */; };
+		FA47F62C2E54BC2E00F4D24F /* DeviceActivityScreenReport.appex in Embed ExtensionKit Extensions */ = {isa = PBXBuildFile; fileRef = FA47F6202E54BC2E00F4D24F /* DeviceActivityScreenReport.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FA47F63A2E56022100F4D24F /* ChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA47F6392E56022100F4D24F /* ChartView.swift */; };
+		FABA3D362E49EB35009B5043 /* DeviceActivity.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FABA3D352E49EB35009B5043 /* DeviceActivity.framework */; };
+		FABA3D3E2E49EB35009B5043 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		FABA3D5D2E4B4445009B5043 /* NotificationCenterExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABA3D5C2E4B4444009B5043 /* NotificationCenterExtension.swift */; };
 		FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */; };
 		FACA10802D9883E600CC26EB /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA107F2D9883E600CC26EB /* ContentView.swift */; };
 		FACA10822D9883E800CC26EB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACA10812D9883E800CC26EB /* Assets.xcassets */; };
@@ -24,10 +29,25 @@
 		FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10A92D995FDF00CC26EB /* ListView.swift */; };
 		FACA10AC2D9ECACB00CC26EB /* GravityAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10AB2D9ECACB00CC26EB /* GravityAnimation.swift */; };
 		FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA10AD2DA1BCFA00CC26EB /* WaterWaveAnimation.swift */; };
-		FAF57DEA2E43A64600AF5C74 /* ScreenTimeAccessPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */; };
+		FAF57DEF2E44AF5800AF5C74 /* ApplicationSelectionPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */; };
+		FAF57DF12E44B08200AF5C74 /* MyModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF57DF02E44B08200AF5C74 /* MyModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FA47F62A2E54BC2E00F4D24F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACA10722D9883E600CC26EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA47F61F2E54BC2E00F4D24F;
+			remoteInfo = DeviceActivityScreenReport;
+		};
+		FABA3D3C2E49EB35009B5043 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FACA10722D9883E600CC26EB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FABA3D322E49EB35009B5043;
+			remoteInfo = DeviceActivityMonitorExtension;
+		};
 		FACA108B2D9883E800CC26EB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FACA10722D9883E600CC26EB /* Project object */;
@@ -44,13 +64,42 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		FA47F5E12E54B58500F4D24F /* Embed ExtensionKit Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "$(EXTENSIONS_FOLDER_PATH)";
+			dstSubfolderSpec = 16;
+			files = (
+				FA47F62C2E54BC2E00F4D24F /* DeviceActivityScreenReport.appex in Embed ExtensionKit Extensions */,
+			);
+			name = "Embed ExtensionKit Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FAF57E062E44E8B500AF5C74 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				FABA3D3E2E49EB35009B5043 /* DeviceActivityMonitorExtension.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		FA2481A42E1AAD3B0085DC05 /* TabbedItems.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabbedItems.swift; sourceTree = "<group>"; };
 		FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabbedView.swift; sourceTree = "<group>"; };
 		FA39A3662E299D7500059BEA /* LaunchScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchScreen.swift; sourceTree = "<group>"; };
 		FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyGoalScreen.swift; sourceTree = "<group>"; };
-		FA8C317C2E1DA557002BEAC7 /* ListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRow.swift; sourceTree = "<group>"; };
-		FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IstatisticView.swift; sourceTree = "<group>"; };
+		FA3B1B1C2E5F512C00B27649 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		FA47F6202E54BC2E00F4D24F /* DeviceActivityScreenReport.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.extensionkit-extension"; includeInIndex = 0; path = DeviceActivityScreenReport.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA47F6392E56022100F4D24F /* ChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChartView.swift; sourceTree = "<group>"; };
+		FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DeviceActivityMonitorExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		FABA3D352E49EB35009B5043 /* DeviceActivity.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = DeviceActivity.framework; path = System/Library/Frameworks/DeviceActivity.framework; sourceTree = SDKROOT; };
+		FABA3D5C2E4B4444009B5043 /* NotificationCenterExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationCenterExtension.swift; sourceTree = "<group>"; };
 		FACA107A2D9883E600CC26EB /* WaterBoost.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WaterBoost.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterBoostApp.swift; sourceTree = "<group>"; };
 		FACA107F2D9883E600CC26EB /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -65,18 +114,55 @@
 		FACA10A92D995FDF00CC26EB /* ListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListView.swift; sourceTree = "<group>"; };
 		FACA10AB2D9ECACB00CC26EB /* GravityAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GravityAnimation.swift; sourceTree = "<group>"; };
 		FACA10AD2DA1BCFA00CC26EB /* WaterWaveAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterWaveAnimation.swift; sourceTree = "<group>"; };
-		FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenTimeAccessPage.swift; sourceTree = "<group>"; };
+		FAF57DEB2E449CFF00AF5C74 /* WaterBoost.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WaterBoost.entitlements; sourceTree = "<group>"; };
+		FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationSelectionPage.swift; sourceTree = "<group>"; };
+		FAF57DF02E44B08200AF5C74 /* MyModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		FA47F62D2E54BC2E00F4D24F /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FA47F61F2E54BC2E00F4D24F /* DeviceActivityScreenReport */;
+		};
+		FABA3D412E49EB35009B5043 /* PBXFileSystemSynchronizedBuildFileExceptionSet */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Info.plist,
+			);
+			target = FABA3D322E49EB35009B5043 /* DeviceActivityMonitorExtension */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
+		FA47F6212E54BC2E00F4D24F /* DeviceActivityScreenReport */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FA47F62D2E54BC2E00F4D24F /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeviceActivityScreenReport; sourceTree = "<group>"; };
 		FAAF2A442E295B0C00A89795 /* OnBoarding */ = {isa = PBXFileSystemSynchronizedRootGroup; explicitFileTypes = {}; explicitFolders = (); path = OnBoarding; sourceTree = "<group>"; };
+		FABA3D372E49EB35009B5043 /* DeviceActivityMonitorExtension */ = {isa = PBXFileSystemSynchronizedRootGroup; exceptions = (FABA3D412E49EB35009B5043 /* PBXFileSystemSynchronizedBuildFileExceptionSet */, ); explicitFileTypes = {}; explicitFolders = (); path = DeviceActivityMonitorExtension; sourceTree = "<group>"; };
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FA47F61D2E54BC2E00F4D24F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA3D302E49EB35009B5043 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FABA3D362E49EB35009B5043 /* DeviceActivity.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FACA10772D9883E600CC26EB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA3B1AFA2E5DC35100B27649 /* ConfettiSwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -97,12 +183,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FABA3D342E49EB35009B5043 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FABA3D352E49EB35009B5043 /* DeviceActivity.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		FACA10712D9883E600CC26EB = {
 			isa = PBXGroup;
 			children = (
 				FACA107C2D9883E600CC26EB /* WaterBoost */,
 				FACA108D2D9883E800CC26EB /* WaterBoostTests */,
 				FACA10972D9883E800CC26EB /* WaterBoostUITests */,
+				FABA3D372E49EB35009B5043 /* DeviceActivityMonitorExtension */,
+				FA47F6212E54BC2E00F4D24F /* DeviceActivityScreenReport */,
+				FABA3D342E49EB35009B5043 /* Frameworks */,
 				FACA107B2D9883E600CC26EB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -113,6 +210,8 @@
 				FACA107A2D9883E600CC26EB /* WaterBoost.app */,
 				FACA108A2D9883E800CC26EB /* WaterBoostTests.xctest */,
 				FACA10942D9883E800CC26EB /* WaterBoostUITests.xctest */,
+				FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */,
+				FA47F6202E54BC2E00F4D24F /* DeviceActivityScreenReport.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -120,6 +219,9 @@
 		FACA107C2D9883E600CC26EB /* WaterBoost */ = {
 			isa = PBXGroup;
 			children = (
+				FA3B1B1C2E5F512C00B27649 /* Info.plist */,
+				FA47F6392E56022100F4D24F /* ChartView.swift */,
+				FAF57DEB2E449CFF00AF5C74 /* WaterBoost.entitlements */,
 				FAAF2A442E295B0C00A89795 /* OnBoarding */,
 				FACA107D2D9883E600CC26EB /* WaterBoostApp.swift */,
 				FA39A3662E299D7500059BEA /* LaunchScreen.swift */,
@@ -132,10 +234,10 @@
 				FACA10832D9883E800CC26EB /* Preview Content */,
 				FA2481A42E1AAD3B0085DC05 /* TabbedItems.swift */,
 				FA2481A62E1AADE50085DC05 /* MainTabbedView.swift */,
-				FA8C317C2E1DA557002BEAC7 /* ListRow.swift */,
-				FA8C317E2E1DB93E002BEAC7 /* IstatisticView.swift */,
-				FAF57DE92E43A64600AF5C74 /* ScreenTimeAccessPage.swift */,
 				FA39A3682E29A1D800059BEA /* DailyGoalScreen.swift */,
+				FAF57DEE2E44AF5800AF5C74 /* ApplicationSelectionPage.swift */,
+				FAF57DF02E44B08200AF5C74 /* MyModel.swift */,
+				FABA3D5C2E4B4444009B5043 /* NotificationCenterExtension.swift */,
 			);
 			path = WaterBoost;
 			sourceTree = "<group>";
@@ -168,6 +270,50 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FA47F61F2E54BC2E00F4D24F /* DeviceActivityScreenReport */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA47F62E2E54BC2E00F4D24F /* Build configuration list for PBXNativeTarget "DeviceActivityScreenReport" */;
+			buildPhases = (
+				FA47F61C2E54BC2E00F4D24F /* Sources */,
+				FA47F61D2E54BC2E00F4D24F /* Frameworks */,
+				FA47F61E2E54BC2E00F4D24F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FA47F6212E54BC2E00F4D24F /* DeviceActivityScreenReport */,
+			);
+			name = DeviceActivityScreenReport;
+			packageProductDependencies = (
+			);
+			productName = DeviceActivityScreenReport;
+			productReference = FA47F6202E54BC2E00F4D24F /* DeviceActivityScreenReport.appex */;
+			productType = "com.apple.product-type.extensionkit-extension";
+		};
+		FABA3D322E49EB35009B5043 /* DeviceActivityMonitorExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FABA3D422E49EB35009B5043 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */;
+			buildPhases = (
+				FABA3D2F2E49EB35009B5043 /* Sources */,
+				FABA3D302E49EB35009B5043 /* Frameworks */,
+				FABA3D312E49EB35009B5043 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				FABA3D372E49EB35009B5043 /* DeviceActivityMonitorExtension */,
+			);
+			name = DeviceActivityMonitorExtension;
+			packageProductDependencies = (
+			);
+			productName = DeviceActivityMonitorExtension;
+			productReference = FABA3D332E49EB35009B5043 /* DeviceActivityMonitorExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		FACA10792D9883E600CC26EB /* WaterBoost */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FACA109E2D9883E800CC26EB /* Build configuration list for PBXNativeTarget "WaterBoost" */;
@@ -175,10 +321,14 @@
 				FACA10762D9883E600CC26EB /* Sources */,
 				FACA10772D9883E600CC26EB /* Frameworks */,
 				FACA10782D9883E600CC26EB /* Resources */,
+				FAF57E062E44E8B500AF5C74 /* Embed Foundation Extensions */,
+				FA47F5E12E54B58500F4D24F /* Embed ExtensionKit Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				FABA3D3D2E49EB35009B5043 /* PBXTargetDependency */,
+				FA47F62B2E54BC2E00F4D24F /* PBXTargetDependency */,
 			);
 			fileSystemSynchronizedGroups = (
 				FAAF2A442E295B0C00A89795 /* OnBoarding */,
@@ -231,9 +381,15 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1500;
+				LastSwiftUpdateCheck = 1630;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
+					FA47F61F2E54BC2E00F4D24F = {
+						CreatedOnToolsVersion = 16.3;
+					};
+					FABA3D322E49EB35009B5043 = {
+						CreatedOnToolsVersion = 16.3;
+					};
 					FACA10792D9883E600CC26EB = {
 						CreatedOnToolsVersion = 15.0.1;
 					};
@@ -256,6 +412,9 @@
 				Base,
 			);
 			mainGroup = FACA10712D9883E600CC26EB;
+			packageReferences = (
+				FA3B1AB62E5DBC5400B27649 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */,
+			);
 			productRefGroup = FACA107B2D9883E600CC26EB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -263,11 +422,27 @@
 				FACA10792D9883E600CC26EB /* WaterBoost */,
 				FACA10892D9883E800CC26EB /* WaterBoostTests */,
 				FACA10932D9883E800CC26EB /* WaterBoostUITests */,
+				FABA3D322E49EB35009B5043 /* DeviceActivityMonitorExtension */,
+				FA47F61F2E54BC2E00F4D24F /* DeviceActivityScreenReport */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FA47F61E2E54BC2E00F4D24F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA3D312E49EB35009B5043 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FACA10782D9883E600CC26EB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -294,23 +469,39 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FA47F61C2E54BC2E00F4D24F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FABA3D2F2E49EB35009B5043 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA3B1B1B2E5DC37B00B27649 /* MyModel.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FACA10762D9883E600CC26EB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA47F63A2E56022100F4D24F /* ChartView.swift in Sources */,
 				FACA10AC2D9ECACB00CC26EB /* GravityAnimation.swift in Sources */,
 				FA39A3672E299D7500059BEA /* LaunchScreen.swift in Sources */,
 				FA2481A72E1AADE50085DC05 /* MainTabbedView.swift in Sources */,
 				FACA10AA2D995FDF00CC26EB /* ListView.swift in Sources */,
 				FACA10A82D98AE5E00CC26EB /* HomeView.swift in Sources */,
+				FAF57DF12E44B08200AF5C74 /* MyModel.swift in Sources */,
 				FACA10AE2DA1BCFB00CC26EB /* WaterWaveAnimation.swift in Sources */,
-				FAF57DEA2E43A64600AF5C74 /* ScreenTimeAccessPage.swift in Sources */,
-				FA8C317F2E1DB93E002BEAC7 /* IstatisticView.swift in Sources */,
+				FAF57DEF2E44AF5800AF5C74 /* ApplicationSelectionPage.swift in Sources */,
 				FA39A3692E29A1D800059BEA /* DailyGoalScreen.swift in Sources */,
+				FABA3D5D2E4B4445009B5043 /* NotificationCenterExtension.swift in Sources */,
 				FACA10802D9883E600CC26EB /* ContentView.swift in Sources */,
 				FA2481A52E1AAD3B0085DC05 /* TabbedItems.swift in Sources */,
 				FACA107E2D9883E600CC26EB /* WaterBoostApp.swift in Sources */,
-				FA8C317D2E1DA557002BEAC7 /* ListRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -334,6 +525,16 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FA47F62B2E54BC2E00F4D24F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA47F61F2E54BC2E00F4D24F /* DeviceActivityScreenReport */;
+			targetProxy = FA47F62A2E54BC2E00F4D24F /* PBXContainerItemProxy */;
+		};
+		FABA3D3D2E49EB35009B5043 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FABA3D322E49EB35009B5043 /* DeviceActivityMonitorExtension */;
+			targetProxy = FABA3D3C2E49EB35009B5043 /* PBXContainerItemProxy */;
+		};
 		FACA108C2D9883E800CC26EB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FACA10792D9883E600CC26EB /* WaterBoost */;
@@ -347,6 +548,116 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
+		FA47F62F2E54BC2E00F4D24F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityScreenReport/DeviceActivityScreenReport.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A5Y9WBD7WV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeviceActivityScreenReport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityScreenReport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banu.WaterBoost.DeviceActivityScreenReport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA47F6302E54BC2E00F4D24F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityScreenReport/DeviceActivityScreenReportRelease.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A5Y9WBD7WV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeviceActivityScreenReport/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityScreenReport;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banu.WaterBoost.DeviceActivityScreenReport;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FABA3D3F2E49EB35009B5043 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtension.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A5Y9WBD7WV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityMonitorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banu.WaterBoost.DeviceActivityMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FABA3D402E49EB35009B5043 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = DeviceActivityMonitorExtension/DeviceActivityMonitorExtensionRelease.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = A5Y9WBD7WV;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = DeviceActivityMonitorExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = DeviceActivityMonitorExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.banu.WaterBoost.DeviceActivityMonitorExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 		FACA109C2D9883E800CC26EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -471,12 +782,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WaterBoost/WaterBoost.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterBoost/Preview Content\"";
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterBoost/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -500,12 +813,14 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = WaterBoost/WaterBoost.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 13;
 				DEVELOPMENT_ASSET_PATHS = "\"WaterBoost/Preview Content\"";
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WaterBoost/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -527,7 +842,6 @@
 		FACA10A22D9883E800CC26EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -547,7 +861,6 @@
 		FACA10A32D9883E800CC26EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -567,7 +880,6 @@
 		FACA10A52D9883E800CC26EB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
@@ -585,7 +897,6 @@
 		FACA10A62D9883E800CC26EB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = A5Y9WBD7WV;
@@ -603,6 +914,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FA47F62E2E54BC2E00F4D24F /* Build configuration list for PBXNativeTarget "DeviceActivityScreenReport" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA47F62F2E54BC2E00F4D24F /* Debug */,
+				FA47F6302E54BC2E00F4D24F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FABA3D422E49EB35009B5043 /* Build configuration list for PBXNativeTarget "DeviceActivityMonitorExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FABA3D3F2E49EB35009B5043 /* Debug */,
+				FABA3D402E49EB35009B5043 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FACA10752D9883E600CC26EB /* Build configuration list for PBXProject "WaterBoost" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -640,6 +969,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FA3B1AB62E5DBC5400B27649 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/simibac/ConfettiSwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FA3B1AF92E5DC35100B27649 /* ConfettiSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FA3B1AB62E5DBC5400B27649 /* XCRemoteSwiftPackageReference "ConfettiSwiftUI" */;
+			productName = ConfettiSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FACA10722D9883E600CC26EB /* Project object */;
 }

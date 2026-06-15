@@ -12,20 +12,32 @@ struct MainTabbedView: View {
     
     @State var selectedTab = 0
     let customBlue = Color(red: 134/255, green: 199/255, blue: 237/255)
+    private let barHeight: CGFloat = 50   // custom bar yüksekliği
 
     var body: some View {
         
-        ZStack(alignment: .bottom){
+        ZStack(alignment: .bottom) {
+            darkBlue.ignoresSafeArea()
+            Text("Detay Sayfası")
+                .foregroundColor(darkBlue)
+                .navigationBarBackButtonHidden(true)
+            
             TabView(selection: $selectedTab) {
                 ContentView()
                     .tag(0)
-                IstatisticView()
+                    .toolbar(.hidden, for: .tabBar)
+                ApplicationSelectionPage()
                     .tag(1)
-                ListView()
-                    .tag(2)
+                    .toolbar(.hidden, for: .tabBar)
             }
+            .toolbar(.hidden, for: .tabBar)
             
-            ZStack{
+            .contentMargins(.bottom, barHeight + 16, for: .scrollContent) // iOS 17+
+
+                    // 2) Scroll olmayan sayfalar için de güvene al
+            .padding(.bottom, barHeight + 16)
+            
+            ZStack {
                 HStack{
                     ForEach((TabbedItems.allCases), id: \.self){ item in
                         Button{

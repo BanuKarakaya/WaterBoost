@@ -16,11 +16,10 @@ struct OnboardingView: View {
             ForEach(onboardings[0...1]) { item in
                 OnboardingCardView(onboarding: item)
             }
-            UserNameView()
-            LanguangeList()
+              UserNameView1()
           }
           .tabViewStyle(PageTabViewStyle())
-          .padding(.vertical, 20)
+          .ignoresSafeArea()
           .background(darkBlue)
     }
 }
